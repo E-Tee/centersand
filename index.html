@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ЦентрПескоструя.РФ — пескоструйная обработка и покраска любой сложности | СПб и ЛО</title>
-<meta name="description" content="Пескоструйная очистка фасадов, кирпича, камня, металла, авто. Реставрация объектов культурного наследия. Очистка после пожара. Без предоплаты, гарантия до 5 лет. СПб и ЛО.">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/unbounded@latest/400.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/unbounded@latest/700.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/unbounded@latest/900.css">
+<title>ЦентрПескоструя.РФ — пескоструйная очистка и реставрация | СПб и ЛО</title>
+<meta name="description" content="Пескоструйная очистка фасадов, металла, авто, судов, реставрация объектов культурного наследия. Допуски СРО, гарантия до 5 лет. Расчёт по фото за 15 минут.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/oswald@latest/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/oswald@latest/500.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/oswald@latest/600.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/oswald@latest/700.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@latest/400.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@latest/500.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@latest/700.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@latest/400.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@latest/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@latest/800.css">
 <style>
 :root{
   --bg:#0d0c0a;
@@ -24,27 +24,22 @@
   --line2:rgba(242,237,227,.28);
   --or:#ff4d00;
   --sand:#d8b078;
-  --disp:'Unbounded',system-ui,sans-serif;
-  --body:'Manrope',system-ui,sans-serif;
-  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --disp:'Oswald',sans-serif;
+  --body:'Manrope',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  background:var(--bg);color:var(--ink);font-family:var(--body);
-  font-size:16px;line-height:1.6;overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 ::selection{background:var(--or);color:#0d0c0a}
 body::-webkit-scrollbar{width:10px}
 body::-webkit-scrollbar-track{background:var(--bg)}
-body::-webkit-scrollbar-thumb{background:#3a352d;border-radius:0}
-body::-webkit-thumb:hover{background:var(--or)}
+body::-webkit-scrollbar-thumb{background:#3a352d}
+body::-webkit-scrollbar-thumb:hover{background:var(--or)}
 img,svg{display:block}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .wrap{max-width:1480px;margin:0 auto;padding:0 clamp(18px,4vw,56px)}
-.mono{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+.mono{font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase}
 
 /* ---------- grain overlay ---------- */
 body::after{
@@ -61,9 +56,9 @@ body::after{
 /* ---------- preloader ---------- */
 #preloader{position:fixed;inset:0;background:var(--bg);z-index:200;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:22px;transition:transform .8s cubic-bezier(.76,0,.24,1)}
 #preloader.done{transform:translateY(-101%)}
-#preCount{font-family:var(--disp);font-weight:900;font-size:clamp(56px,14vw,150px);line-height:1;color:var(--ink)}
+#preCount{font-family:var(--disp);font-weight:700;font-size:clamp(56px,14vw,150px);line-height:1;letter-spacing:.02em}
 #preCount span{color:var(--or)}
-#preLabel{font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase}
+#preLabel{font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase}
 
 /* ---------- cursor ---------- */
 #curDot,#curRing{position:fixed;top:0;left:0;pointer-events:none;z-index:150;border-radius:50%;opacity:0}
@@ -77,29 +72,30 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .4s
 header.scrolled{background:rgba(13,12,10,.86);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
 .hd{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0}
 .logo{display:flex;align-items:center;gap:14px}
-.logoMark{width:44px;height:44px;border:1px solid var(--line2);display:grid;place-items:center;font-family:var(--disp);font-weight:900;font-size:15px;color:var(--or);position:relative;overflow:hidden;flex:none}
+.logoMark{width:44px;height:44px;border:1px solid var(--line2);display:grid;place-items:center;font-family:var(--disp);font-weight:600;font-size:16px;color:var(--or);position:relative;overflow:hidden;flex:none}
 .logoMark::before{content:"";position:absolute;inset:0;background:var(--or);transform:translateY(101%);transition:transform .35s cubic-bezier(.76,0,.24,1)}
 .logo:hover .logoMark::before{transform:translateY(0)}
 .logo:hover .logoMark{color:#0d0c0a}
 .logoMark span{position:relative;z-index:1}
-.logoTxt{font-family:var(--disp);font-weight:700;font-size:14px;letter-spacing:.02em;line-height:1.2}
-.logoTxt small{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.28em;color:var(--muted);font-weight:400}
+.logoTxt{font-family:var(--disp);font-weight:600;font-size:15px;letter-spacing:.06em;text-transform:uppercase;line-height:1.2}
+.logoTxt small{display:block;font-family:var(--body);font-weight:700;font-size:9px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase}
 nav.mainNav{display:flex;gap:30px}
-nav.mainNav a{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);position:relative;padding:6px 0;transition:color .3s}
+nav.mainNav a{font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);position:relative;padding:6px 0;transition:color .3s}
 nav.mainNav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--or);transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.76,0,.24,1)}
 nav.mainNav a:hover{color:var(--ink)}
 nav.mainNav a:hover::after{transform:scaleX(1);transform-origin:left}
 .hdRight{display:flex;align-items:center;gap:18px}
-.hdPhone{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--ink);transition:color .3s}
+.hdPhone{font-family:var(--disp);font-weight:500;font-size:17px;letter-spacing:.04em;color:var(--ink);transition:color .3s}
 .hdPhone:hover{color:var(--or)}
-.btn{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:15px 26px;border:1px solid var(--or);color:var(--ink);position:relative;overflow:hidden;background:transparent;transition:color .35s}
+.btn{display:inline-flex;align-items:center;gap:12px;font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:15px 26px;border:1px solid var(--or);color:var(--ink);position:relative;overflow:hidden;background:transparent;transition:color .35s}
 .btn::before{content:"";position:absolute;inset:0;background:var(--or);transform:translateY(101%);transition:transform .4s cubic-bezier(.76,0,.24,1);z-index:0}
 .btn:hover::before{transform:translateY(0)}
 .btn:hover{color:#0d0c0a}
 .btn span,.btn svg{position:relative;z-index:1}
+.btn svg{transition:transform .35s}
+.btn:hover svg{transform:translateX(4px)}
 .btn.solid{background:var(--or);color:#0d0c0a}
 .btn.solid::before{background:var(--ink)}
-.btn.solid:hover{color:#0d0c0a}
 .btn.ghost{border-color:var(--line2)}
 .btn.ghost::before{background:var(--ink)}
 .btn.ghost:hover{color:#0d0c0a;border-color:var(--ink)}
@@ -112,55 +108,76 @@ body.menuOpen #burger i:nth-child(2){opacity:0}
 body.menuOpen #burger i:nth-child(3){top:22px;transform:rotate(-45deg)}
 #mobMenu{position:fixed;inset:0;background:var(--bg2);z-index:110;display:flex;flex-direction:column;justify-content:center;padding:100px clamp(24px,8vw,60px) 40px;clip-path:inset(0 0 100% 0);transition:clip-path .6s cubic-bezier(.76,0,.24,1);visibility:hidden}
 body.menuOpen #mobMenu{clip-path:inset(0 0 0 0);visibility:visible}
-#mobMenu a.mLink{font-family:var(--disp);font-weight:900;font-size:clamp(30px,8vw,54px);text-transform:uppercase;line-height:1.25;color:var(--ink);border-bottom:1px solid var(--line);padding:14px 0;display:flex;justify-content:space-between;align-items:center}
-#mobMenu a.mLink em{font-family:var(--mono);font-style:normal;font-size:11px;color:var(--or)}
-#mobMenu .mFoot{margin-top:34px;display:flex;flex-direction:column;gap:8px;color:var(--muted);font-family:var(--mono);font-size:12px}
-@media (max-width:1080px){nav.mainNav{display:none}#burger{display:block}.hdPhone{display:none}}
+#mobMenu a.mLink{font-family:var(--disp);font-weight:600;font-size:clamp(30px,8vw,54px);text-transform:uppercase;line-height:1.25;color:var(--ink);border-bottom:1px solid var(--line);padding:14px 0;display:flex;justify-content:space-between;align-items:center}
+#mobMenu a.mLink em{font-family:var(--body);font-style:normal;font-weight:700;font-size:11px;color:var(--or);letter-spacing:.2em}
+#mobMenu .mFoot{margin-top:34px;display:flex;flex-direction:column;gap:8px;color:var(--muted);font-size:13px}
+@media (max-width:1120px){nav.mainNav{display:none}#burger{display:block}.hdPhone{display:none}}
 @media (max-width:560px){.hd .btn{display:none}}
 
-/* ---------- hero ---------- */
-#hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-top:130px;overflow:hidden}
-#sandCanvas{position:absolute;inset:0;width:100%;height:100%;opacity:.85}
-.heroGridLines{position:absolute;inset:0;pointer-events:none;background:
+/* ---------- hero slider ---------- */
+#hero{position:relative;min-height:100svh;display:flex;flex-direction:column;overflow:hidden}
+#sandCanvas{position:absolute;inset:0;width:100%;height:100%;opacity:.7;z-index:2}
+.heroGridLines{position:absolute;inset:0;pointer-events:none;z-index:1;background:
   linear-gradient(90deg,transparent calc(25% - 1px),var(--line) calc(25% - 1px) 25%,transparent 25%),
   linear-gradient(90deg,transparent calc(50% - 1px),var(--line) calc(50% - 1px) 50%,transparent 50%),
   linear-gradient(90deg,transparent calc(75% - 1px),var(--line) calc(75% - 1px) 75%,transparent 75%);
   opacity:.5}
-.heroTop{position:relative;z-index:2;display:flex;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:clamp(28px,5vh,60px)}
-.heroTag{display:flex;align-items:center;gap:12px;color:var(--muted)}
-.heroTag b{width:9px;height:9px;background:var(--or);border-radius:50%;animation:pulse 2s infinite}
+.slider{position:relative;z-index:3;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding-top:130px}
+.slide{position:absolute;inset:130px 0 0;display:flex;flex-direction:column;justify-content:flex-end;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s}
+.slide.active{opacity:1;visibility:visible}
+.slideArt{position:absolute;inset:0;z-index:-1}
+.slideArt svg{width:100%;height:100%;transform:scale(1.08);transition:transform 6.5s linear;opacity:.85}
+.slide.active .slideArt svg{transform:scale(1)}
+.slideArt::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(10,9,6,.78) 0%,rgba(10,9,6,.25) 45%,rgba(10,9,6,.92) 100%),
+  radial-gradient(70% 90% at 12% 100%,rgba(10,9,6,.9),transparent 70%)}
+.slideGhost{position:absolute;right:clamp(-8px,1vw,44px);top:6vh;font-family:var(--disp);font-weight:700;font-size:clamp(130px,25vw,400px);line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(242,237,227,.13);pointer-events:none;user-select:none}
+.slideTag{display:inline-flex;align-items:center;gap:12px;font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--sand);margin-bottom:22px}
+.slideTag b{width:8px;height:8px;background:var(--or);border-radius:50%;flex:none;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,77,0,.5)}50%{box-shadow:0 0 0 9px rgba(255,77,0,0)}}
-.heroSide{max-width:280px;color:var(--muted);font-size:14px;text-align:right;line-height:1.7}
-.heroSide b{color:var(--ink)}
-h1.heroTitle{position:relative;z-index:2;font-family:var(--disp);font-weight:900;text-transform:uppercase;font-size:clamp(52px,12.4vw,196px);line-height:.92;letter-spacing:-.02em}
-h1.heroTitle .ln{display:block;overflow:hidden}
-h1.heroTitle .ln i{display:block;font-style:normal;transform:translateY(110%);transition:transform 1s cubic-bezier(.16,1,.3,1)}
-body.loaded h1.heroTitle .ln i{transform:translateY(0)}
-h1.heroTitle .ln:nth-child(2) i{transition-delay:.12s}
-h1.heroTitle .ln:nth-child(3) i{transition-delay:.24s}
-.outline{color:transparent;-webkit-text-stroke:2px var(--ink)}
+.slide h1{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(30px,5.4vw,80px);line-height:1.02;letter-spacing:.01em;max-width:1060px}
+.slide h1 .ln{display:block;overflow:hidden}
+.slide h1 .ln i{display:block;font-style:normal;transform:translateY(110%);transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.slide.active h1 .ln i{transform:translateY(0)}
+.slide.active h1 .ln:nth-child(2) i{transition-delay:.09s}
+.slide.active h1 .ln:nth-child(3) i{transition-delay:.18s}
+.outline{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
 .orTxt{color:var(--or)}
-.heroSub{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:26px;align-items:center;justify-content:space-between;margin:clamp(26px,4vh,44px) 0 clamp(30px,5vh,56px)}
-.heroSub p{max-width:460px;color:var(--muted);font-size:clamp(14px,1.4vw,17px)}
-.heroSub p b{color:var(--ink)}
-.heroCtas{display:flex;gap:14px;flex-wrap:wrap}
-.heroMeta{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
-.heroMeta div{padding:22px 22px 26px 0;border-right:1px solid var(--line)}
-.heroMeta div:last-child{border-right:none}
-.heroMeta b{display:block;font-family:var(--disp);font-weight:700;font-size:clamp(20px,2.6vw,34px);line-height:1.1}
-.heroMeta b em{font-style:normal;color:var(--or)}
-.heroMeta span{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-.scrollHint{position:absolute;right:clamp(18px,4vw,56px);bottom:120px;z-index:2;writing-mode:vertical-rl;font-family:var(--mono);font-size:10px;letter-spacing:.3em;color:var(--muted);display:flex;align-items:center;gap:12px}
+.slideSub{max-width:620px;color:#cfc7b8;font-size:clamp(14px,1.4vw,16.5px);margin:22px 0 32px}
+.slideSub b{color:var(--ink);font-weight:700}
+.slideCtas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:clamp(34px,5vh,56px)}
+.stg{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.slide.active .stg{opacity:1;transform:none}
+.slide.active .stg.d1{transition-delay:.08s}
+.slide.active .stg.d2{transition-delay:.16s}
+.slide.active .stg.d3{transition-delay:.24s}
+/* controls */
+.sliderCtl{position:relative;z-index:4;border-top:1px solid var(--line);background:rgba(10,9,6,.4);backdrop-filter:blur(8px)}
+.sliderCtl .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:78px}
+.ctlLeft{display:flex;align-items:center;gap:26px}
+.slideNum{font-family:var(--disp);font-weight:600;font-size:15px;letter-spacing:.12em;white-space:nowrap}
+.slideNum i{font-style:normal;color:var(--or)}
+.slideNum s{text-decoration:none;color:var(--muted)}
+.dots{display:flex;gap:8px}
+.dots button{width:36px;height:4px;background:rgba(242,237,227,.18);position:relative;overflow:hidden}
+.dots button.on::after{content:"";position:absolute;inset:0;background:var(--or);transform-origin:left;animation:dotProg var(--dur,6000ms) linear forwards}
+@keyframes dotProg{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.arrows{display:flex;gap:10px}
+.arrows button{width:52px;height:52px;border:1px solid var(--line2);display:grid;place-items:center;transition:background .3s,border-color .3s}
+.arrows button:hover{background:var(--or);border-color:var(--or)}
+.arrows svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
+@media(max-width:640px){.arrows{display:none}.sliderCtl .wrap{min-height:62px}}
+.scrollHint{position:absolute;right:clamp(18px,4vw,56px);bottom:110px;z-index:5;writing-mode:vertical-rl;font-family:var(--body);font-weight:700;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:12px}
 .scrollHint::after{content:"";width:1px;height:56px;background:linear-gradient(var(--or),transparent);animation:drip 1.8s infinite}
 @keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-@media (max-width:860px){.heroSide{display:none}.heroMeta{grid-template-columns:repeat(2,1fr)}.heroMeta div:nth-child(2){border-right:none}.heroMeta div{border-bottom:1px solid var(--line)}.scrollHint{display:none}}
+@media(max-width:860px){.scrollHint{display:none}}
 
 /* ---------- marquee ---------- */
-.mq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);position:relative}
+.mq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);position:relative;z-index:3}
 .mq.orange{background:var(--or);border:none;color:#0d0c0a}
 .mqTrack{display:flex;width:max-content;animation:mq 30s linear infinite}
 .mq:hover .mqTrack{animation-play-state:paused}
-.mqTrack span{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(20px,3.4vw,44px);padding:18px 0;white-space:nowrap;display:flex;align-items:center;gap:clamp(20px,3vw,44px);padding-right:clamp(20px,3vw,44px)}
+.mqTrack span{font-family:var(--disp);font-weight:600;text-transform:uppercase;font-size:clamp(20px,3.4vw,44px);padding:18px 0;white-space:nowrap;display:flex;align-items:center;gap:clamp(20px,3vw,44px);padding-right:clamp(20px,3vw,44px)}
 .mqTrack span u{text-decoration:none;color:transparent;-webkit-text-stroke:1px currentColor}
 .mqTrack span s{text-decoration:none;color:var(--or)}
 .mq.orange .mqTrack span s{color:#0d0c0a}
@@ -169,175 +186,164 @@ h1.heroTitle .ln:nth-child(3) i{transition-delay:.24s}
 /* ---------- sections ---------- */
 section{position:relative}
 .secHead{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;padding:clamp(60px,9vw,120px) 0 clamp(30px,4vw,54px);flex-wrap:wrap}
-.secLabel{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--or);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.secLabel{font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--or);display:flex;align-items:center;gap:12px;margin-bottom:18px}
 .secLabel::before{content:"";width:44px;height:1px;background:var(--or)}
-h2.secTitle{font-family:var(--disp);font-weight:900;text-transform:uppercase;font-size:clamp(30px,6vw,84px);line-height:1;letter-spacing:-.01em;max-width:900px}
+h2.secTitle{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(28px,5.4vw,76px);line-height:1.04;letter-spacing:.01em;max-width:920px}
 h2.secTitle .outline{-webkit-text-stroke-width:1.5px}
-.secNote{max-width:360px;color:var(--muted);font-size:14px;border-left:1px solid var(--line2);padding-left:20px}
-
-/* reveal */
+.secNote{max-width:380px;color:var(--muted);font-size:14px;border-left:1px solid var(--line2);padding-left:20px}
 .rv{opacity:0;transform:translateY(46px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
 .rv.in{opacity:1;transform:none}
 
-/* ---------- why ---------- */
-.whyGrid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.whyCell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(26px,3vw,44px);position:relative;overflow:hidden;transition:background .4s}
-.whyCell::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 220px at 0% 0%,rgba(255,77,0,.14),transparent 70%);opacity:0;transition:opacity .5s}
-.whyCell:hover::before{opacity:1}
-.whyCell .num{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.2em;transition:color .3s}
-.whyCell:hover .num{color:var(--or)}
-.whyCell h3{font-family:var(--disp);font-weight:700;font-size:clamp(16px,1.7vw,22px);margin:26px 0 14px;line-height:1.3}
-.whyCell p{color:var(--muted);font-size:14px}
-.whyCell .ico{position:absolute;right:22px;bottom:20px;width:44px;height:44px;color:var(--line2);transition:color .4s,transform .5s}
-.whyCell:hover .ico{color:var(--or);transform:rotate(-8deg) scale(1.1)}
-@media (max-width:980px){.whyGrid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:620px){.whyGrid{grid-template-columns:1fr}}
-
-/* ---------- before/after ---------- */
-#ba{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.baWrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,4vw,64px);align-items:center;padding-bottom:clamp(60px,9vw,120px)}
-.baBox{position:relative;aspect-ratio:16/10;overflow:hidden;border:1px solid var(--line2);cursor:ew-resize;user-select:none;touch-action:none;background:#000}
-.baLayer{position:absolute;inset:0}
-.baLayer svg{width:100%;height:100%}
-.baBefore{clip-path:inset(0 calc(100% - var(--x,55%)) 0 0)}
-.baHandle{position:absolute;top:0;bottom:0;left:var(--x,55%);width:2px;background:var(--or);z-index:3;pointer-events:none}
-.baHandle::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;border:1px solid var(--or);border-radius:50%;background:rgba(13,12,10,.6);backdrop-filter:blur(4px)}
-.baHandle b{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;font-family:var(--mono);font-size:14px;color:var(--or);letter-spacing:-.1em}
-.baTag{position:absolute;top:16px;z-index:2;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;padding:7px 12px;border:1px solid var(--line2);background:rgba(13,12,10,.55);backdrop-filter:blur(4px)}
-.baTag.l{left:16px;color:var(--sand)}
-.baTag.r{right:16px;color:var(--ink)}
-.baInfo h3{font-family:var(--disp);font-weight:700;font-size:clamp(20px,2.6vw,32px);line-height:1.25;margin-bottom:18px}
-.baInfo p{color:var(--muted);font-size:15px;margin-bottom:16px}
-.baList{list-style:none;margin:24px 0 30px;display:flex;flex-direction:column}
-.baList li{display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
-.baList li b{color:var(--ink);font-weight:500}
-.baList li::before{content:"→";color:var(--or);font-family:var(--mono)}
-@media (max-width:900px){.baWrap{grid-template-columns:1fr}}
+/* ---------- trust ---------- */
+#trust{background:var(--bg2);border-bottom:1px solid var(--line)}
+.trustGrid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.trustCell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(26px,3vw,44px);position:relative;overflow:hidden;transition:background .4s}
+.trustCell::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 220px at 0% 0%,rgba(255,77,0,.14),transparent 70%);opacity:0;transition:opacity .5s}
+.trustCell:hover::before{opacity:1}
+.trustMark{width:64px;height:64px;border:1px solid var(--line2);display:grid;place-items:center;font-family:var(--disp);font-weight:600;font-size:16px;letter-spacing:.06em;color:var(--sand);margin-bottom:26px;transition:border-color .35s,color .35s}
+.trustCell:hover .trustMark{border-color:var(--or);color:var(--or)}
+.trustCell h3{font-family:var(--disp);font-weight:600;font-size:clamp(16px,1.7vw,21px);text-transform:uppercase;letter-spacing:.03em;margin-bottom:10px;line-height:1.25}
+.trustCell p{color:var(--muted);font-size:13.5px}
+.statGrid{display:grid;grid-template-columns:repeat(4,1fr);background:var(--or);color:#0d0c0a}
+.statCell{padding:clamp(30px,4vw,58px) clamp(18px,2.4vw,40px);border-left:1px solid rgba(13,12,10,.25)}
+.statCell:first-child{border-left:none}
+.statCell b{display:block;font-family:var(--disp);font-weight:700;font-size:clamp(38px,5.6vw,86px);line-height:1;letter-spacing:.01em}
+.statCell span{font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;display:block;margin-top:12px;max-width:180px}
+@media (max-width:980px){.trustGrid{grid-template-columns:repeat(2,1fr)}.statGrid{grid-template-columns:repeat(2,1fr)}.statCell{border-top:1px solid rgba(13,12,10,.25)}.statCell:nth-child(-n+2){border-top:none}.statCell:nth-child(3){border-left:none}}
+@media (max-width:580px){.trustGrid{grid-template-columns:1fr}}
 
 /* ---------- services ---------- */
-.svcList{border-top:1px solid var(--line)}
-.svcRow{display:grid;grid-template-columns:76px 1fr auto 60px;align-items:center;gap:20px;padding:clamp(22px,2.6vw,36px) 0;border-bottom:1px solid var(--line);position:relative;transition:padding .4s cubic-bezier(.76,0,.24,1)}
-.svcRow::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,77,0,.1),transparent 60%);opacity:0;transition:opacity .4s}
-.svcRow:hover::before{opacity:1}
-.svcRow:hover{padding-left:22px}
-.svcIdx{font-family:var(--mono);font-size:12px;color:var(--muted);transition:color .3s}
-.svcRow:hover .svcIdx{color:var(--or)}
-.svcName{font-family:var(--disp);font-weight:700;font-size:clamp(17px,2.6vw,32px);text-transform:uppercase;line-height:1.2;transition:color .3s}
-.svcRow:hover .svcName{color:var(--or)}
-.svcDesc{display:block;font-family:var(--body);font-weight:400;font-size:13px;text-transform:none;color:var(--muted);letter-spacing:0;margin-top:6px}
-.svcPrice{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--sand);white-space:nowrap}
-.svcArrow{width:44px;height:44px;border:1px solid var(--line2);border-radius:50%;display:grid;place-items:center;transition:background .35s,transform .45s,border-color .35s;justify-self:end}
-.svcArrow svg{width:16px;height:16px;transition:transform .4s}
-.svcRow:hover .svcArrow{background:var(--or);border-color:var(--or);transform:rotate(45deg)}
-.svcRow:hover .svcArrow svg{transform:rotate(-45deg)}
-.svcArrow svg{stroke:currentColor}
-#svcPreview{position:fixed;top:0;left:0;width:270px;height:200px;z-index:90;pointer-events:none;opacity:0;transform:translate3d(-50%,-50%,0) scale(.85);transition:opacity .3s,scale .3s;border:1px solid var(--line2);background:var(--bg3);display:grid;place-items:center;overflow:hidden}
-#svcPreview.on{opacity:1;transform:translate3d(-50%,-50%,0) scale(1)}
-#svcPreview svg{width:110px;height:110px;color:var(--or)}
-#svcPreview::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0 9px,rgba(242,237,227,.05) 9px 10px)}
-@media (hover:none){#svcPreview{display:none}}
-@media (max-width:760px){.svcRow{grid-template-columns:44px 1fr 44px}.svcPrice{display:none}}
+.svcGrid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.svcCard{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(24px,2.6vw,38px);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background .4s}
+.svcCard::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 240px at 100% 0%,rgba(255,77,0,.12),transparent 70%);opacity:0;transition:opacity .5s}
+.svcCard:hover::before{opacity:1}
+.svcTop{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:28px}
+.svcIco{width:52px;height:52px;color:var(--sand);transition:color .35s,transform .5s}
+.svcCard:hover .svcIco{color:var(--or);transform:rotate(-8deg) scale(1.08)}
+.svcNum{font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:.2em;color:var(--muted)}
+.svcCard h3{font-family:var(--disp);font-weight:600;font-size:clamp(17px,1.8vw,22px);text-transform:uppercase;letter-spacing:.03em;margin-bottom:10px}
+.svcCard p{color:var(--muted);font-size:13.5px;margin-bottom:20px;flex:1}
+.svcPrice{font-family:var(--disp);font-weight:500;font-size:14.5px;letter-spacing:.05em;border-top:1px dashed var(--line2);padding-top:14px;margin-bottom:16px}
+.svcPrice b{color:var(--or);font-weight:600}
+.svcLink{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);transition:color .3s,gap .3s}
+.svcLink:hover{color:var(--or);gap:16px}
+.svcLink svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8}
+@media(max-width:1220px){.svcGrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:940px){.svcGrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.svcGrid{grid-template-columns:1fr}}
 
-/* ---------- price ---------- */
-#price{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.priceGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px);padding-bottom:clamp(60px,9vw,120px)}
-.pCard{border:1px solid var(--line);padding:clamp(26px,2.6vw,40px);display:flex;flex-direction:column;position:relative;transition:transform .5s cubic-bezier(.16,1,.3,1),border-color .4s;background:var(--bg)}
-.pCard:hover{transform:translateY(-10px);border-color:var(--line2)}
-.pCard.pop{background:var(--ink);color:#0d0c0a;border-color:var(--ink)}
-.pCard.pop .pTag{background:var(--or);color:#0d0c0a}
-.pCard.pop .pList li{border-color:rgba(13,12,10,.16);color:#4c463d}
-.pCard.pop .pList li b{color:#0d0c0a}
-.pTag{position:absolute;top:-13px;left:clamp(26px,2.6vw,40px);font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;background:var(--bg3);border:1px solid var(--line2);padding:6px 12px;color:var(--muted)}
-.pName{font-family:var(--disp);font-weight:700;font-size:clamp(18px,2vw,24px);text-transform:uppercase;margin:14px 0 6px}
-.pFrom{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-.pCard.pop .pFrom{color:#6b6357}
-.pVal{font-family:var(--disp);font-weight:900;font-size:clamp(38px,4.6vw,64px);line-height:1;margin:16px 0 4px}
-.pVal small{font-size:.36em;font-weight:700;color:var(--or)}
-.pList{list-style:none;margin:22px 0 30px;flex:1}
-.pList li{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
-.pList li b{font-family:var(--mono);font-weight:700;font-size:12px;white-space:nowrap}
-@media (max-width:980px){.priceGrid{grid-template-columns:1fr}}
+/* ---------- why (rows) ---------- */
+#why{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.whyList{border-top:1px solid var(--line);padding-bottom:clamp(60px,9vw,120px)}
+.whyRow{display:grid;grid-template-columns:76px 1.1fr 1.4fr auto;align-items:center;gap:clamp(16px,3vw,44px);padding:clamp(22px,2.8vw,34px) 0;border-bottom:1px solid var(--line);position:relative;transition:padding .4s cubic-bezier(.76,0,.24,1)}
+.whyRow::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,77,0,.09),transparent 60%);opacity:0;transition:opacity .4s}
+.whyRow:hover::before{opacity:1}
+.whyRow:hover{padding-left:20px}
+.whyN{font-family:var(--body);font-weight:700;font-size:12px;letter-spacing:.2em;color:var(--muted);transition:color .3s}
+.whyRow:hover .whyN{color:var(--or)}
+.whyRow h3{font-family:var(--disp);font-weight:600;font-size:clamp(16px,2.1vw,26px);text-transform:uppercase;letter-spacing:.03em;line-height:1.2;transition:color .3s}
+.whyRow:hover h3{color:var(--or)}
+.whyRow p{color:var(--muted);font-size:14px}
+.whyTag{font-family:var(--body);font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--line2);padding:8px 14px;color:var(--muted);white-space:nowrap}
+@media(max-width:900px){.whyRow{grid-template-columns:44px 1fr;row-gap:8px}.whyRow p{grid-column:2}.whyTag{display:none}}
 
-/* ---------- projects ---------- */
-.projScroller{display:flex;gap:clamp(16px,2vw,28px);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:26px;cursor:grab;scrollbar-width:none}
-.projScroller::-webkit-scrollbar{display:none}
-.projScroller.drag{cursor:grabbing}
+/* ---------- equipment ---------- */
+.pjScroller{display:flex;gap:clamp(16px,2vw,28px);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:26px;cursor:grab;scrollbar-width:none}
+.pjScroller::-webkit-scrollbar{display:none}
+.pjScroller.drag{cursor:grabbing}
 .pjCard{flex:0 0 min(430px,82vw);scroll-snap-align:start;border:1px solid var(--line);background:var(--bg2);position:relative;overflow:hidden;transition:border-color .4s}
 .pjCard:hover{border-color:var(--line2)}
-.pjArt{aspect-ratio:4/3;position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:
-  radial-gradient(360px 240px at 70% 20%,rgba(255,77,0,.16),transparent 70%),var(--bg3)}
-.pjArt svg{position:absolute;inset:0;margin:auto;width:62%;height:62%;color:var(--sand);transition:transform .8s cubic-bezier(.16,1,.3,1),color .5s}
-.pjCard:hover .pjArt svg{transform:scale(1.08) rotate(-2deg);color:var(--or)}
+.pjArt{aspect-ratio:4/3;position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:radial-gradient(360px 240px at 70% 20%,rgba(255,77,0,.16),transparent 70%),var(--bg3)}
+.pjArt svg.big{position:absolute;inset:0;margin:auto;width:60%;height:60%;color:var(--sand);transition:transform .8s cubic-bezier(.16,1,.3,1),color .5s}
+.pjCard:hover .pjArt svg.big{transform:scale(1.08) rotate(-2deg);color:var(--or)}
 .pjArt::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,0,0,.22) 3px 4px)}
-.pjNum{position:absolute;top:14px;left:16px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--muted);z-index:2}
+.pjNum{position:absolute;top:14px;left:16px;font-family:var(--body);font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);z-index:2}
 .pjBody{padding:24px}
-.pjBody h3{font-family:var(--disp);font-weight:700;font-size:18px;text-transform:uppercase;line-height:1.3;margin-bottom:10px}
+.pjBody h3{font-family:var(--disp);font-weight:600;font-size:19px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:10px}
 .pjBody p{color:var(--muted);font-size:13.5px;margin-bottom:16px}
-.pjTags{display:flex;gap:8px;flex-wrap:wrap}
-.pjTags i{font-style:normal;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line2);padding:5px 10px;color:var(--muted)}
-.projBar{height:2px;background:var(--line);position:relative;margin-top:8px}
-.projBar i{position:absolute;left:0;top:0;bottom:0;background:var(--or);width:12%;transition:width .2s}
+.pjBody ul{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:4px}
+.pjBody li{font-size:13px;color:#cfc7b8;display:flex;gap:10px}
+.pjBody li::before{content:"—";color:var(--or)}
+.eqMore{display:flex;justify-content:center;padding-bottom:clamp(60px,9vw,120px)}
+.projBar{height:2px;background:var(--line);position:relative;margin-bottom:clamp(34px,4vw,54px)}
+.projBar i{position:absolute;left:0;top:0;bottom:0;background:var(--or);width:33%;transition:width .2s,left .2s}
 
-/* ---------- stats ---------- */
-#stats{background:var(--or);color:#0d0c0a}
-.statGrid{display:grid;grid-template-columns:repeat(4,1fr)}
-.statCell{padding:clamp(34px,4.6vw,70px) clamp(18px,2.4vw,40px);border-left:1px solid rgba(13,12,10,.25)}
-.statCell:first-child{border-left:none}
-.statCell b{display:block;font-family:var(--disp);font-weight:900;font-size:clamp(40px,6.4vw,96px);line-height:1;letter-spacing:-.02em}
-.statCell span{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;display:block;margin-top:12px;max-width:180px}
-@media (max-width:860px){.statGrid{grid-template-columns:repeat(2,1fr)}.statCell:nth-child(3){border-left:none}.statCell{border-top:1px solid rgba(13,12,10,.25)}.statCell:nth-child(-n+2){border-top:none}}
+/* ---------- prices ---------- */
+#prices{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.prGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.5vw,20px)}
+.prCell{border:1px solid var(--line);background:var(--bg);padding:clamp(22px,2.2vw,32px);display:flex;flex-direction:column;gap:8px;transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .4s}
+.prCell:hover{transform:translateY(-6px);border-color:var(--line2)}
+.prCell span{font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.prCell b{font-family:var(--disp);font-weight:700;font-size:clamp(24px,2.8vw,38px);letter-spacing:.02em;line-height:1.1}
+.prCell b i{font-style:normal;font-size:.45em;color:var(--or)}
+.prNote{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:clamp(30px,4vw,48px);flex-wrap:wrap;padding-bottom:clamp(60px,9vw,120px)}
+.prNote p{color:var(--muted);font-size:14px;max-width:600px}
+.prNote p b{color:var(--ink)}
+@media(max-width:1080px){.prGrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.prGrid{grid-template-columns:1fr}}
 
-/* ---------- faq ---------- */
-.accItem{border-top:1px solid var(--line)}
-.accItem:last-child{border-bottom:1px solid var(--line)}
-.accBtn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:clamp(20px,2.6vw,32px) 0;text-align:left;font-family:var(--disp);font-weight:700;font-size:clamp(15px,1.9vw,22px);line-height:1.35;transition:color .3s}
-.accBtn:hover{color:var(--or)}
-.accIco{flex:none;width:38px;height:38px;border:1px solid var(--line2);border-radius:50%;position:relative;transition:transform .45s cubic-bezier(.76,0,.24,1),background .3s,border-color .3s}
-.accIco::before,.accIco::after{content:"";position:absolute;top:50%;left:50%;background:currentColor;transition:transform .4s,background .3s}
-.accIco::before{width:14px;height:1.5px;transform:translate(-50%,-50%)}
-.accIco::after{width:1.5px;height:14px;transform:translate(-50%,-50%)}
-.accItem.open .accIco{transform:rotate(135deg);background:var(--or);border-color:var(--or);color:#0d0c0a}
-.accBody{max-height:0;overflow:hidden;transition:max-height .55s cubic-bezier(.76,0,.24,1)}
-.accBody p{color:var(--muted);font-size:15px;max-width:860px;padding-bottom:clamp(20px,2.6vw,32px)}
-.accBody p b{color:var(--ink)}
+/* ---------- reviews ---------- */
+.revGrid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin-bottom:clamp(20px,3vw,40px)}
+.revCell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(24px,2.6vw,40px);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background .4s}
+.revCell::before{content:"";position:absolute;inset:0;background:radial-gradient(380px 200px at 0% 100%,rgba(255,77,0,.1),transparent 70%);opacity:0;transition:opacity .5s}
+.revCell:hover::before{opacity:1}
+.revStars{font-size:13px;letter-spacing:4px;color:var(--or);margin-bottom:18px}
+.revQ{font-family:var(--disp);font-weight:700;font-size:58px;line-height:.5;color:var(--or);margin-bottom:22px}
+.revCell>p{color:var(--muted);font-size:14px;flex:1;margin-bottom:28px}
+.revCell>p b{color:var(--ink);font-weight:700}
+.revWho{display:flex;align-items:center;gap:14px;border-top:1px dashed var(--line2);padding-top:20px}
+.revAv{width:52px;height:52px;border:1px solid var(--line2);display:grid;place-items:center;font-family:var(--disp);font-weight:600;font-size:15px;color:var(--sand);flex:none}
+.revWho b{display:block;font-family:var(--disp);font-weight:600;font-size:14.5px;letter-spacing:.04em;text-transform:uppercase}
+.revWho span{color:var(--muted);font-size:12.5px}
+@media(max-width:1080px){.revGrid{grid-template-columns:1fr}}
 
-/* ---------- contact ---------- */
-#contact{background:var(--bg2);border-top:1px solid var(--line)}
-.ctGrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,80px);padding-bottom:clamp(60px,9vw,120px)}
-.ctInfo h3{font-family:var(--disp);font-weight:900;font-size:clamp(26px,4vw,52px);text-transform:uppercase;line-height:1.05;margin-bottom:24px}
+/* ---------- CTA form ---------- */
+#cta{background:var(--bg2);border-top:1px solid var(--line);position:relative;overflow:hidden}
+#cta::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(60% 90% at 88% 8%,rgba(255,77,0,.14),transparent 60%),
+  radial-gradient(50% 70% at 4% 96%,rgba(216,176,120,.09),transparent 60%)}
+.ctGrid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(30px,5vw,80px);padding-bottom:clamp(60px,9vw,120px);position:relative}
+.ctInfo h3{font-family:var(--disp);font-weight:700;font-size:clamp(26px,3.8vw,50px);text-transform:uppercase;line-height:1.08;margin-bottom:24px;letter-spacing:.01em}
 .ctInfo h3 em{font-style:normal;color:var(--or)}
-.ctRows{display:flex;flex-direction:column;margin-top:10px}
-.ctRow{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-top:1px solid var(--line);font-size:14px;flex-wrap:wrap}
-.ctRow span{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.ctInfo>p{color:var(--muted);font-size:14.5px;max-width:440px;margin-bottom:10px}
+.ctSteps{list-style:none;margin:24px 0 30px;display:flex;flex-direction:column}
+.ctSteps li{display:flex;gap:16px;padding:14px 0;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.ctSteps li:last-child{border-bottom:1px solid var(--line)}
+.ctSteps b{font-family:var(--disp);font-weight:600;font-size:15px;color:var(--or);flex:none;width:34px}
+.ctRows{display:flex;flex-direction:column}
+.ctRow{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-top:1px solid var(--line);font-size:14px;flex-wrap:wrap}
+.ctRow span{font-family:var(--body);font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding-top:3px}
 .ctRow a,.ctRow b{font-weight:500;transition:color .3s}
 .ctRow a:hover{color:var(--or)}
-.socials{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
-.socials a{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--line2);padding:10px 16px;transition:background .3s,color .3s,border-color .3s}
-.socials a:hover{background:var(--ink);color:#0d0c0a;border-color:var(--ink)}
-form.ctForm{display:grid;grid-template-columns:1fr 1fr;gap:26px 30px;align-content:start;border:1px solid var(--line);padding:clamp(26px,3vw,46px);background:var(--bg);position:relative}
+form.ctForm{display:grid;gap:26px;border:1px solid var(--line);padding:clamp(26px,3vw,46px);background:rgba(13,12,10,.5);position:relative;align-content:start}
 .fField{display:flex;flex-direction:column;gap:10px}
-.fField.full{grid-column:1/-1}
-.fField label{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-.fField input,.fField select,.fField textarea{background:transparent;border:none;border-bottom:1px solid var(--line2);color:var(--ink);font-family:var(--body);font-size:15px;padding:10px 0;outline:none;transition:border-color .3s;border-radius:0;appearance:none}
-.fField select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23a2988a' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center;cursor:pointer}
-.fField select option{background:var(--bg3);color:var(--ink)}
-.fField textarea{resize:vertical;min-height:74px}
-.fField input:focus,.fField select:focus,.fField textarea:focus{border-bottom-color:var(--or)}
-.fField input::placeholder,.fField textarea::placeholder{color:#5c554a}
-.fSubmit{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.fSubmit p{font-family:var(--mono);font-size:10px;color:var(--muted);max-width:320px;letter-spacing:.06em}
-#formOk{position:absolute;inset:0;background:var(--bg);display:none;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:30px}
+.fField label{font-family:var(--body);font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.fField input{background:transparent;border:none;border-bottom:1px solid var(--line2);color:var(--ink);font-family:var(--body);font-size:16px;padding:10px 0;outline:none;transition:border-color .3s;border-radius:0}
+.fField input:focus{border-bottom-color:var(--or)}
+.fField input::placeholder{color:#5c554a}
+.fileZone{border:1.5px dashed var(--line2);padding:26px;text-align:center;cursor:pointer;transition:border-color .3s,background .3s;position:relative}
+.fileZone:hover{border-color:var(--or);background:rgba(255,77,0,.05)}
+.fileZone input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.fileZone .fzIco{width:38px;height:38px;margin:0 auto 12px;color:var(--or);stroke:currentColor;fill:none;stroke-width:1.7}
+.fileZone b{display:block;font-family:var(--disp);font-weight:600;font-size:15px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.fileZone span{color:var(--muted);font-size:12.5px}
+.fileList{font-size:12.5px;color:var(--sand);font-weight:700;letter-spacing:.04em}
+.filePreviews{display:flex;gap:10px;flex-wrap:wrap}
+.filePreviews img{width:64px;height:64px;object-fit:cover;border:1px solid var(--line2)}
+.fPolicy{font-family:var(--body);font-size:11px;color:var(--muted);line-height:1.5}
+.fPolicy a{color:var(--muted);text-decoration:underline}
+#formOk{position:absolute;inset:0;background:var(--bg2);display:none;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:30px;z-index:2}
 #formOk.on{display:flex}
 #formOk .okIco{width:74px;height:74px;border:1px solid var(--or);border-radius:50%;display:grid;place-items:center;color:var(--or);animation:okPop .6s cubic-bezier(.16,1,.3,1)}
 @keyframes okPop{from{transform:scale(.4);opacity:0}}
-#formOk h4{font-family:var(--disp);font-weight:700;font-size:22px;text-transform:uppercase}
+#formOk h4{font-family:var(--disp);font-weight:600;font-size:22px;text-transform:uppercase;letter-spacing:.04em}
 #formOk p{color:var(--muted);font-size:14px;max-width:340px}
-@media (max-width:900px){.ctGrid{grid-template-columns:1fr}form.ctForm{grid-template-columns:1fr}}
+@media (max-width:940px){.ctGrid{grid-template-columns:1fr}}
 
 /* ---------- footer ---------- */
 footer{border-top:1px solid var(--line);overflow:hidden}
-.ftBig{font-family:var(--disp);font-weight:900;text-transform:uppercase;font-size:clamp(44px,11.6vw,190px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(242,237,227,.22);white-space:nowrap;padding:clamp(24px,4vw,50px) 0 0;user-select:none}
-.ftRow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:26px 0 34px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ftBig{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(42px,11.4vw,186px);line-height:1.05;color:transparent;-webkit-text-stroke:1px rgba(242,237,227,.22);white-space:nowrap;padding:clamp(24px,4vw,50px) 0 0;user-select:none;letter-spacing:.01em}
+.ftRow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:26px 0 34px;font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .ftRow a:hover{color:var(--or)}
 .ftNav{display:flex;gap:22px;flex-wrap:wrap}
 </style>
@@ -347,53 +353,24 @@ footer{border-top:1px solid var(--line);overflow:hidden}
 <!-- SVG sprite -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <symbol id="iWood" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
-      <circle cx="32" cy="32" r="26"/><circle cx="32" cy="32" r="18"/><circle cx="32" cy="32" r="10"/><circle cx="32" cy="32" r="3"/>
-      <path d="M32 6v8M58 32h-8M32 58v-8M6 32h8"/>
-    </symbol>
-    <symbol id="iBrick" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
-      <rect x="4" y="8" width="56" height="48"/><path d="M4 24h56M4 40h56M22 8v16M44 8v16M12 24v16M34 24v16M54 24v16M22 40v16M44 40v16"/>
-    </symbol>
-    <symbol id="iStone" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
-      <path d="M6 14l16-6 14 8-4 14-20 2z"/><path d="M36 16l18-4 6 16-14 8-14-6z"/><path d="M10 36l22-4 8 14-12 10-18-8z"/><path d="M42 38l16-4 2 18-14 4z"/>
-    </symbol>
-    <symbol id="iMetal" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
-      <path d="M12 10h40M12 54h40M26 10v44M38 10v44M12 10v6h40v-6M12 48v6h40v-6"/>
-    </symbol>
-    <symbol id="iAuto" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
-      <circle cx="32" cy="32" r="26"/><circle cx="32" cy="32" r="12"/><circle cx="32" cy="32" r="4"/>
-      <path d="M32 20v-8M42 26l6-6M44 32h8M42 38l6 6M32 44v8M22 38l-6 6M20 32h-8M22 26l-6-6"/>
-    </symbol>
-    <symbol id="iBridge" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
-      <path d="M4 46h56M8 46V30M56 46V30M8 30h48M8 30l12 16M20 46V30M20 30l12 16M32 46V30M32 30l12 16M44 46V30M44 30l12 16M4 52h56"/>
-    </symbol>
-    <symbol id="iHeritage" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
-      <path d="M32 6c8 8 12 13 12 19a12 12 0 0 1-24 0c0-6 4-11 12-19z"/><path d="M32 6V2M28 4h8M20 37h24v21H20z"/><path d="M26 58V46a6 6 0 0 1 12 0v12"/>
-    </symbol>
-    <symbol id="iFire" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
-      <path d="M32 4c4 10 16 14 16 28a16 16 0 0 1-32 0C16 22 24 18 24 10c4 3 6 6 8-6z"/><path d="M32 58a8 8 0 0 1-8-8c0-6 8-8 8-14 0 6 8 8 8 14a8 8 0 0 1-8 8z"/>
-    </symbol>
-    <symbol id="iArrow" viewBox="0 0 16 16" fill="none" stroke-width="1.6">
-      <path d="M3 13L13 3M6 3h7v7"/>
-    </symbol>
-    <symbol id="iShield" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
-      <path d="M32 6l22 8v18c0 14-10 22-22 26C20 54 10 46 10 32V14z"/><path d="M22 32l7 7 13-14"/>
-    </symbol>
-    <symbol id="iRuble" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
-      <path d="M24 54V10h14a12 12 0 0 1 0 24H20M20 44h22"/>
-    </symbol>
-    <symbol id="iDoc" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
-      <path d="M16 6h22l10 10v42H16z"/><path d="M38 6v10h10M24 28h16M24 36h16M24 44h10"/>
-    </symbol>
-    <symbol id="iGear" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
-      <circle cx="32" cy="32" r="10"/><path d="M32 8v8M32 48v8M8 32h8M48 32h8M15 15l6 6M43 43l6 6M49 15l-6 6M21 43l-6 6"/>
-    </symbol>
-    <symbol id="iTower" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
-      <path d="M22 58L28 10h8l6 48M24 42h16M25.5 30h11M27 18h10M18 58h28"/>
-    </symbol>
-    <symbol id="iCard" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
-      <rect x="6" y="14" width="52" height="36" rx="3"/><path d="M6 26h52M14 40h12"/>
-    </symbol>
+    <symbol id="iFacade" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 58h52M12 58V20l20-12 20 12v38M20 30h8v8h-8zM36 30h8v8h-8zM20 44h8v14h-8zM36 44h8v14h-8z"/></symbol>
+    <symbol id="iMetal" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 10h40M12 54h40M26 10v44M38 10v44M12 10v6h40v-6M12 48v6h40v-6"/></symbol>
+    <symbol id="iAuto" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="32" cy="32" r="26"/><circle cx="32" cy="32" r="11"/><path d="M32 21v-8M42 27l6-6M43 32h8M42 37l6 6M32 43v8M22 37l-6 6M21 32h-8M22 27l-6-6"/></symbol>
+    <symbol id="iWood" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="32" cy="32" r="26"/><circle cx="32" cy="32" r="17"/><circle cx="32" cy="32" r="9"/><circle cx="32" cy="32" r="2.5"/><path d="M32 6v9M58 32h-9M32 58v-9M6 32h9"/></symbol>
+    <symbol id="iShip" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 44h52l-8 12H14zM18 44V26h24v18M24 26v-8h12v8M30 18V8M6 58c6 0 6-4 12-4s6 4 12 4 6-4 12-4 6 4 12 4"/></symbol>
+    <symbol id="iSpec" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M32 8a18 18 0 0 1 18 18v10H14V26A18 18 0 0 1 32 8zM10 36h44M20 44v12M44 44v12"/></symbol>
+    <symbol id="iHeritage" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M32 8c8 8 12 13 12 19a12 12 0 0 1-24 0c0-6 4-11 12-19zM32 8V2M20 38h24v20H20zM26 58V47a6 6 0 0 1 12 0v11"/></symbol>
+    <symbol id="iFire" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M32 4c4 10 16 14 16 28a16 16 0 0 1-32 0C16 22 24 18 24 10c4 3 6 6 8-6z"/><path d="M32 58a8 8 0 0 1-8-8c0-6 8-8 8-14 0 6 8 8 8 14a8 8 0 0 1-8 8z"/></symbol>
+    <symbol id="iShield" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M32 6l22 8v18c0 14-10 22-22 26C20 54 10 46 10 32V14z"/><path d="M22 32l7 7 13-14"/></symbol>
+    <symbol id="iMaster" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="32" cy="18" r="10"/><path d="M12 56c2-12 10-18 20-18s18 6 20 18"/></symbol>
+    <symbol id="iCompressor" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="22" width="36" height="26" rx="3"/><circle cx="24" cy="35" r="8"/><path d="M42 30h10a6 6 0 0 1 6 6v20M14 48v8M34 48v8M18 22V12h16v10"/></symbol>
+    <symbol id="iRecycle" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M32 6l14 22H18zM32 28v18M18 46h28l-4 12H22z"/><path d="M10 34l6-6M54 34l-6-6"/></symbol>
+    <symbol id="iBroom" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M44 8L28 30M20 26l16 12-6 8-16-12zM14 46l-4 12M22 52l-2 8M30 56l1 6"/></symbol>
+    <symbol id="iDoc" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 6h22l10 10v42H16z"/><path d="M38 6v10h10M24 28h16M24 36h16M24 44h10"/></symbol>
+    <symbol id="iArrowR" viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="iChevL" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="iChevR" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+    <symbol id="iUpload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 17v3h16v-3"/></symbol>
   </defs>
 </svg>
 
@@ -408,31 +385,32 @@ footer{border-top:1px solid var(--line);overflow:hidden}
   <div class="wrap hd">
     <a class="logo" href="#hero" data-hover>
       <span class="logoMark"><span>ЦП</span></span>
-      <span class="logoTxt">ЦентрПескоструя<small>пескоструй · покраска · спб</small></span>
+      <span class="logoTxt">ЦентрПескоструя<small>СПб · с 2014 года</small></span>
     </a>
     <nav class="mainNav">
+      <a href="#trust" data-hover>Наследие</a>
+      <a href="#uslugi" data-hover>Услуги</a>
       <a href="#why" data-hover>Почему мы</a>
-      <a href="#services" data-hover>Услуги</a>
-      <a href="#price" data-hover>Прайс</a>
-      <a href="#projects" data-hover>Объекты</a>
-      <a href="#faq" data-hover>Вопросы</a>
-      <a href="#contact" data-hover>Контакты</a>
+      <a href="#equip" data-hover>Оборудование</a>
+      <a href="#prices" data-hover>Цены</a>
+      <a href="#otzyvy" data-hover>Отзывы</a>
     </nav>
     <div class="hdRight">
       <a class="hdPhone" href="tel:88002011855" data-hover>8 800 201-18-55</a>
-      <a class="btn sm solid" href="#contact" data-hover><span>Оставить заявку</span></a>
+      <a class="btn sm solid" href="#cta" data-hover><span>Расчёт по фото</span></a>
       <button id="burger" aria-label="Меню"><i></i><i></i><i></i></button>
     </div>
   </div>
 </header>
 
 <div id="mobMenu">
-  <a class="mLink" href="#why">Почему мы <em>01</em></a>
-  <a class="mLink" href="#ba">До / После <em>02</em></a>
-  <a class="mLink" href="#services">Услуги <em>03</em></a>
-  <a class="mLink" href="#price">Прайс <em>04</em></a>
-  <a class="mLink" href="#projects">Объекты <em>05</em></a>
-  <a class="mLink" href="#contact">Контакты <em>07</em></a>
+  <a class="mLink" href="#trust">Наследие <em>01</em></a>
+  <a class="mLink" href="#uslugi">Услуги <em>02</em></a>
+  <a class="mLink" href="#why">Почему мы <em>03</em></a>
+  <a class="mLink" href="#equip">Оборудование <em>04</em></a>
+  <a class="mLink" href="#prices">Цены <em>05</em></a>
+  <a class="mLink" href="#otzyvy">Отзывы <em>06</em></a>
+  <a class="mLink" href="#cta">Заявка <em>07</em></a>
   <div class="mFoot">
     <a href="tel:88002011855">8 800 201-18-55</a>
     <span>CenterPeskostruya.rf@mail.ru</span>
@@ -440,38 +418,213 @@ footer{border-top:1px solid var(--line);overflow:hidden}
   </div>
 </div>
 
-<!-- ============ HERO ============ -->
+<!-- ============ 1. HERO — СЛАЙДЕР «НАШИ ОБЪЕКТЫ» ============ -->
 <section id="hero">
-  <canvas id="sandCanvas"></canvas>
   <div class="heroGridLines"></div>
-  <div class="wrap" style="display:flex;flex-direction:column;justify-content:flex-end;flex:1">
-    <div class="heroTop">
-      <div class="heroTag mono"><b></b> СПб и ЛО · работаем с 2014 года</div>
-      <div class="heroSide">Пескоструйная обработка и покраска любой сложности: <b>от диска до объекта культурного наследия</b>.</div>
-    </div>
-    <h1 class="heroTitle">
-      <span class="ln"><i>Песок.</i></span>
-      <span class="ln"><i class="outline">Давление.</i></span>
-      <span class="ln"><i class="orTxt">Чистота.</i></span>
-    </h1>
-    <div class="heroSub">
-      <p>Снимаем ржавчину, сажу, старую краску и десятилетия погоды — <b>до живого основания</b>. Готовим поверхность, на которой покрытие держится годами.</p>
-      <div class="heroCtas">
-        <a class="btn solid" href="#contact" data-hover><span>Запросить смету</span><svg width="14" height="14"><use href="#iArrow"/></svg></a>
-        <a class="btn ghost" href="#price" data-hover><span>Смотреть прайс</span></a>
+  <canvas id="sandCanvas"></canvas>
+  <div class="slider" id="slider">
+
+    <div class="slide active" data-link="/obekty/kunstkamera/">
+      <div class="slideArt">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+          <defs><linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2418"/><stop offset="1" stop-color="#14120d"/></linearGradient></defs>
+          <rect width="1600" height="900" fill="url(#sky1)"/>
+          <circle cx="1250" cy="200" r="90" fill="#ff4d00" opacity=".3"/>
+          <g fill="#0f0d09" stroke="#3a3226" stroke-width="2">
+            <rect x="120" y="560" width="1360" height="340"/>
+            <rect x="120" y="560" width="1360" height="26" fill="#1d1811"/>
+            <rect x="640" y="180" width="320" height="400"/>
+            <path d="M640 180 L800 60 L960 180 Z"/>
+            <rect x="770" y="-40" width="60" height="120"/>
+            <circle cx="800" cy="10" r="46"/>
+            <rect x="240" y="440" width="360" height="140"/><rect x="1000" y="440" width="360" height="140"/>
+          </g>
+          <g stroke="#332b1f" stroke-width="2" fill="none">
+            <path d="M160 640h1280M160 720h1280M160 800h1280"/>
+            <path d="M300 586v300M560 586v300M1040 586v300M1300 586v300"/>
+            <rect x="360" y="620" width="60" height="90"/><rect x="460" y="620" width="60" height="90"/>
+            <rect x="1080" y="620" width="60" height="90"/><rect x="1180" y="620" width="60" height="90"/>
+          </g>
+          <g stroke="#ff4d00" stroke-width="3" opacity=".45" fill="none">
+            <path d="M600 900V500h80v400M920 900V500h80v400M600 560h400M600 700h400"/>
+          </g>
+        </svg>
+      </div>
+      <div class="wrap">
+        <div class="slideGhost">01</div>
+        <div class="slideTag stg"><b></b> Наши объекты · кейс 01 — реставрация heritage</div>
+        <h1 class="stg">
+          <span class="ln"><i>Реставрационная очистка</i></span>
+          <span class="ln"><i class="outline">фасада</i></span>
+          <span class="ln"><i class="orTxt">Кунсткамеры</i></span>
+        </h1>
+        <p class="slideSub stg d1"><b>1 850 м²</b> песчаника и лепного декора. Деликатный режим низкого давления под надзором КГИОП. <b>Срок — 3 месяца</b>, музей не закрывался для посетителей.</p>
+        <div class="slideCtas stg d2">
+          <a class="btn solid" href="/obekty/kunstkamera/" data-hover><span>Смотреть кейс объекта</span><svg width="16" height="16"><use href="#iArrowR"/></svg></a>
+          <a class="btn ghost" href="/obekty/" data-hover><span>Все наши объекты</span></a>
+        </div>
       </div>
     </div>
-    <div class="heroMeta">
-      <div><b>10 <em>лет</em></b><span>на рынке пескоструя</span></div>
-      <div><b>1000<em>+</em></b><span>довольных клиентов</span></div>
-      <div><b>до 5 <em>лет</em></b><span>гарантия по договору</span></div>
-      <div><b>0 <em>₽</em></b><span>предоплаты</span></div>
+
+    <div class="slide" data-link="/obekty/ks-rf/">
+      <div class="slideArt">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+          <defs><linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#241f16"/><stop offset="1" stop-color="#121009"/></linearGradient></defs>
+          <rect width="1600" height="900" fill="url(#sky2)"/>
+          <circle cx="330" cy="230" r="80" fill="#d8b078" opacity=".25"/>
+          <g fill="#0f0d09" stroke="#3a3226" stroke-width="2">
+            <rect x="180" y="300" width="1240" height="600"/>
+            <path d="M180 300 L800 120 L1420 300 Z"/>
+          </g>
+          <g fill="#191408" stroke="#3a3226" stroke-width="2">
+            <rect x="250" y="360" width="70" height="520"/><rect x="420" y="360" width="70" height="520"/>
+            <rect x="590" y="360" width="70" height="520"/><rect x="760" y="360" width="70" height="520"/>
+            <rect x="930" y="360" width="70" height="520"/><rect x="1100" y="360" width="70" height="520"/>
+            <rect x="1270" y="360" width="70" height="520"/>
+          </g>
+          <g stroke="#ff4d00" stroke-width="3" opacity=".4" fill="none"><path d="M200 900V420h60v480M1330 900V420h60v480M200 520h1190"/></g>
+        </svg>
+      </div>
+      <div class="wrap">
+        <div class="slideGhost">02</div>
+        <div class="slideTag stg"><b></b> Наши объекты · кейс 02 — государственный объект</div>
+        <h1 class="stg">
+          <span class="ln"><i>Очистка колоннады</i></span>
+          <span class="ln"><i class="outline">Конституционного</i></span>
+          <span class="ln"><i class="orTxt">суда РФ</i></span>
+        </h1>
+        <p class="slideSub stg d1"><b>2 400 м²</b> гранита и известняка: высолы, городская копоть, следы старой краски. Ночные смены в центре города. <b>Срок — 2 месяца</b>, сдано с первого предъявления.</p>
+        <div class="slideCtas stg d2">
+          <a class="btn solid" href="/obekty/ks-rf/" data-hover><span>Смотреть кейс объекта</span><svg width="16" height="16"><use href="#iArrowR"/></svg></a>
+          <a class="btn ghost" href="/obekty/" data-hover><span>Все наши объекты</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" data-link="/obekty/russkiy-muzey/">
+      <div class="slideArt">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+          <defs><linearGradient id="sky3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b2317"/><stop offset="1" stop-color="#131009"/></linearGradient></defs>
+          <rect width="1600" height="900" fill="url(#sky3)"/>
+          <circle cx="1280" cy="260" r="70" fill="#ff4d00" opacity=".28"/>
+          <g fill="#0f0d09" stroke="#3a3226" stroke-width="2">
+            <rect x="140" y="460" width="1320" height="440"/>
+            <rect x="560" y="240" width="480" height="240"/>
+            <path d="M560 240 L800 110 L1040 240 Z"/>
+          </g>
+          <g fill="#191408" stroke="#3a3226" stroke-width="2">
+            <rect x="620" y="290" width="46" height="190"/><rect x="700" y="290" width="46" height="190"/>
+            <rect x="780" y="290" width="46" height="190"/><rect x="860" y="290" width="46" height="190"/>
+            <rect x="940" y="290" width="46" height="190"/>
+          </g>
+          <g stroke="#332b1f" stroke-width="2" fill="none"><path d="M200 560h1200M200 680h1200M320 500v380M600 500v380M1000 500v380M1280 500v380"/></g>
+          <g stroke="#d8b078" stroke-width="3" opacity=".38" fill="none"><path d="M140 900V520h50v380M1410 900V520h50v380"/></g>
+        </svg>
+      </div>
+      <div class="wrap">
+        <div class="slideGhost">03</div>
+        <div class="slideTag stg"><b></b> Наши объекты · кейс 03 — музей</div>
+        <h1 class="stg">
+          <span class="ln"><i>Фасад и декор</i></span>
+          <span class="ln"><i class="outline">Русского</i></span>
+          <span class="ln"><i class="orTxt">музея</i></span>
+        </h1>
+        <p class="slideSub stg d1"><b>1 100 м²</b>: очистка штукатурного декора, подготовка под покраску, антигрибковая обработка. Пылеулавливание у входа для посетителей. <b>Срок — 6 недель</b>.</p>
+        <div class="slideCtas stg d2">
+          <a class="btn solid" href="/obekty/russkiy-muzey/" data-hover><span>Смотреть кейс объекта</span><svg width="16" height="16"><use href="#iArrowR"/></svg></a>
+          <a class="btn ghost" href="/obekty/" data-hover><span>Все наши объекты</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" data-link="/obekty/ledokol/">
+      <div class="slideArt">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+          <defs><linearGradient id="sky4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e2320"/><stop offset="1" stop-color="#101310"/></linearGradient></defs>
+          <rect width="1600" height="900" fill="url(#sky4)"/>
+          <circle cx="300" cy="200" r="85" fill="#d8b078" opacity=".2"/>
+          <g fill="#0d0f0d" stroke="#33392f" stroke-width="2">
+            <path d="M140 620 L1460 620 L1360 800 L240 800 Z"/>
+            <rect x="520" y="440" width="560" height="180"/>
+            <rect x="700" y="300" width="220" height="140"/>
+            <rect x="1120" y="360" width="70" height="260"/>
+          </g>
+          <g stroke="#2c3129" stroke-width="2" fill="none"><path d="M200 700h1200M560 480h480M560 540h480"/></g>
+          <path d="M0 810 Q400 780 800 815 T1600 800 V900 H0 Z" fill="#0a0c0a" opacity=".9"/>
+          <g stroke="#ff4d00" stroke-width="3" opacity=".42" fill="none"><path d="M300 620V300M300 340l120-40M300 380l-90-30"/></g>
+        </svg>
+      </div>
+      <div class="wrap">
+        <div class="slideGhost">04</div>
+        <div class="slideTag stg"><b></b> Наши объекты · кейс 04 — судостроение</div>
+        <h1 class="stg">
+          <span class="ln"><i>Корпус ледокола:</i></span>
+          <span class="ln"><i class="outline">ржавчина</i></span>
+          <span class="ln"><i class="orTxt">до Sa 2½</i></span>
+        </h1>
+        <p class="slideSub stg d1"><b>3 200 м²</b> в доковых условиях: окалина, ракушки, старые покрытия. Рекуперация абразива — ноль мусора в акваторию. <b>Срок — 5 недель</b>.</p>
+        <div class="slideCtas stg d2">
+          <a class="btn solid" href="/obekty/ledokol/" data-hover><span>Смотреть кейс объекта</span><svg width="16" height="16"><use href="#iArrowR"/></svg></a>
+          <a class="btn ghost" href="/obekty/" data-hover><span>Все наши объекты</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" data-link="/obekty/puteprovod/">
+      <div class="slideArt">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+          <defs><linearGradient id="sky5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#292016"/><stop offset="1" stop-color="#12100a"/></linearGradient></defs>
+          <rect width="1600" height="900" fill="url(#sky5)"/>
+          <circle cx="800" cy="240" r="110" fill="#ff4d00" opacity=".24"/>
+          <g stroke="#3a3226" stroke-width="4" fill="none">
+            <path d="M0 560h1600"/>
+            <path d="M80 560V240M1520 560V240"/>
+            <path d="M80 240h1440"/>
+            <g stroke-width="3"><path d="M80 560L300 240M300 560L80 240M300 560L520 240M520 560L300 240M520 560L740 240M740 560L520 240M740 560L960 240M960 560L740 240M960 560L1180 240M1180 560L960 240M1180 560L1400 240M1400 560L1180 240"/></g>
+            <path d="M300 560v340M740 560v340M1180 560v340" stroke-width="6"/>
+          </g>
+          <rect x="0" y="580" width="1600" height="30" fill="#0e0c08"/>
+        </svg>
+      </div>
+      <div class="wrap">
+        <div class="slideGhost">05</div>
+        <div class="slideTag stg"><b></b> Наши объекты · кейс 05 — промышленность</div>
+        <h1 class="stg">
+          <span class="ln"><i>Путепровод:</i></span>
+          <span class="ln"><i class="outline">4 800 м²</i></span>
+          <span class="ln"><i class="orTxt">металлоконструкций</i></span>
+        </h1>
+        <p class="slideSub stg d1">Очистка пролётов от ржавчины и старых покрытий с покраской. Круглосуточные смены в окна перекрытия движения. <b>Срок — 2,5 месяца</b>, приёмка без замечаний.</p>
+        <div class="slideCtas stg d2">
+          <a class="btn solid" href="/obekty/puteprovod/" data-hover><span>Смотреть кейс объекта</span><svg width="16" height="16"><use href="#iArrowR"/></svg></a>
+          <a class="btn ghost" href="/obekty/" data-hover><span>Все наши объекты</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sliderCtl">
+    <div class="wrap">
+      <div class="ctlLeft">
+        <div class="slideNum"><i id="slCur">01</i> <s>— 05</s></div>
+        <div class="dots" id="slDots">
+          <button class="on" aria-label="Слайд 1"></button>
+          <button aria-label="Слайд 2"></button>
+          <button aria-label="Слайд 3"></button>
+          <button aria-label="Слайд 4"></button>
+          <button aria-label="Слайд 5"></button>
+        </div>
+      </div>
+      <div class="mono" style="color:var(--muted)">только оптимизированные фото · без видео</div>
+      <div class="arrows">
+        <button id="slPrev" aria-label="Предыдущий слайд" data-hover><svg><use href="#iChevL"/></svg></button>
+        <button id="slNext" aria-label="Следующий слайд" data-hover><svg><use href="#iChevR"/></svg></button>
+      </div>
     </div>
   </div>
   <div class="scrollHint">scroll</div>
 </section>
 
-<!-- ============ MARQUEE ============ -->
 <div class="mq orange" aria-hidden="true">
   <div class="mqTrack">
     <span>Пескоструй <s>✳</s> <u>Покраска</u> <s>✳</s> Реставрация <s>✳</s> <u>Очистка после пожара</u> <s>✳</s> Состаривание <s>✳</s> <u>Гравировка</u> <s>✳</s>&nbsp;</span>
@@ -479,121 +632,93 @@ footer{border-top:1px solid var(--line);overflow:hidden}
   </div>
 </div>
 
-<!-- ============ WHY ============ -->
-<section id="why">
+<!-- ============ 2. НАСЛЕДИЕ ============ -->
+<section id="trust">
   <div class="wrap">
     <div class="secHead">
       <div>
-        <div class="secLabel rv">( 01 ) — правильный выбор</div>
-        <h2 class="secTitle rv">Почему<br><span class="outline">выбирают нас</span></h2>
+        <div class="secLabel rv">( 01 ) — нам доверяют национальное наследие</div>
+        <h2 class="secTitle rv">Наши работы на знаковых <span class="outline">объектах Санкт-Петербурга</span></h2>
       </div>
-      <p class="secNote rv">Цена за м² считается честно: расход абразива + трудозатраты. Никаких «звёздочек» в смете.</p>
+      <p class="secNote rv">Государственные музеи, суды и заводы выбирают нас по итогам тендеров: допуски, договоры и полная исполнительная документация.</p>
     </div>
-    <div class="whyGrid">
-      <div class="whyCell rv"><div class="num">/ 01</div><h3>Бесплатный выезд оценщика</h3><p>Фиксируем стоимость и объём работ до старта. Рассказываем о нюансах и технологии простым языком.</p><svg class="ico"><use href="#iTower"/></svg></div>
-      <div class="whyCell rv"><div class="num">/ 02</div><h3>Без предоплат</h3><p>Вы ничем не рискуете: оплата по факту выполненной работы. Доверие зарабатывается результатом.</p><svg class="ico"><use href="#iRuble"/></svg></div>
-      <div class="whyCell rv"><div class="num">/ 03</div><h3>Гарантия по договору</h3><p>Официальный договор, сроки зафиксированы, имущество под защитой. Гарантия на работы — до 5 лет.</p><svg class="ico"><use href="#iDoc"/></svg></div>
-      <div class="whyCell rv"><div class="num">/ 04</div><h3>Профессиональное оборудование</h3><p>Современные компрессоры, абразивоструйные комплексы и пылеулавливание — безупречный результат.</p><svg class="ico"><use href="#iGear"/></svg></div>
-      <div class="whyCell rv"><div class="num">/ 05</div><h3>Объекты любой сложности</h3><p>От фасада и кирпичного дома до металлоконструкций, мостов и деликатной реставрации памятников.</p><svg class="ico"><use href="#iBridge"/></svg></div>
-      <div class="whyCell rv"><div class="num">/ 06</div><h3>Любые способы оплаты</h3><p>Безнал, наличные, карта. Рассрочка платежей и скидки постоянным клиентам.</p><svg class="ico"><use href="#iCard"/></svg></div>
+    <div class="trustGrid">
+      <div class="trustCell rv"><div class="trustMark">РМ</div><h3>Государственный Русский музей</h3><p>Очистка и подготовка фасадов корпусов под покраску, работа с лепным декором.</p></div>
+      <div class="trustCell rv"><div class="trustMark">КС</div><h3>Конституционный суд РФ</h3><p>Очистка гранитной колоннады и цоколя в историческом центре города.</p></div>
+      <div class="trustCell rv"><div class="trustMark">КГ</div><h3>Объекты под надзором КГИОП</h3><p>Деликатные режимы абразивоструйной обработки памятников и лепнины.</p></div>
+      <div class="trustCell rv"><div class="trustMark">ЭР</div><h3>Государственный Эрмитаж</h3><p>Локальные работы по очистке каменных поверхностей и дворовых фасадов.</p></div>
     </div>
+  </div>
+  <div class="statGrid" style="margin-top:clamp(40px,6vw,80px)">
+    <div class="statCell rv"><b data-to="10">0</b><span>лет на рынке пескоструйных услуг</span></div>
+    <div class="statCell rv"><b data-to="1000" data-suf="+">0</b><span>довольных клиентов</span></div>
+    <div class="statCell rv"><b data-to="5">0</b><span>лет — максимальная гарантия</span></div>
+    <div class="statCell rv"><b data-to="1500" data-suf="+">0</b><span>подписчиков в TikTok</span></div>
   </div>
 </section>
 
-<!-- ============ BEFORE / AFTER ============ -->
-<section id="ba">
+<!-- ============ 3. УСЛУГИ ============ -->
+<section id="uslugi">
   <div class="wrap">
     <div class="secHead">
       <div>
-        <div class="secLabel rv">( 02 ) — доказательство</div>
-        <h2 class="secTitle rv">До <span class="orTxt">/</span> После</h2>
+        <div class="secLabel rv">( 02 ) — услуги</div>
+        <h2 class="secTitle rv">Какие задачи <span class="outline">мы решаем</span></h2>
       </div>
-      <p class="secNote rv">Потяните ползунок: слева — копоть и десятилетия грязи, справа — чистое основание. Кирпич, СПб, обоядный цех.</p>
+      <p class="secNote rv">От гаражного диска до федеральной магистрали: одна технология, разные режимы и абразивы под каждый материал.</p>
     </div>
-    <div class="baWrap">
-      <div class="baBox rv" id="baBox" role="slider" aria-label="Сравнение до и после" aria-valuemin="0" aria-valuemax="100" aria-valuenow="55" tabindex="0">
-        <div class="baLayer baAfter">
-          <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <pattern id="brkC" width="84" height="48" patternUnits="userSpaceOnUse">
-                <rect width="84" height="48" fill="#c9b6a0"/>
-                <rect x="2" y="2" width="38" height="20" fill="#b0512c"/>
-                <rect x="44" y="2" width="38" height="20" fill="#a84a28"/>
-                <rect x="-19" y="26" width="38" height="20" fill="#ab4d2a"/>
-                <rect x="23" y="26" width="38" height="20" fill="#b5542e"/>
-                <rect x="65" y="26" width="38" height="20" fill="#a84a28"/>
-              </pattern>
-              <linearGradient id="litC" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".28"/>
-              </linearGradient>
-            </defs>
-            <rect width="800" height="500" fill="url(#brkC)"/>
-            <rect width="800" height="500" fill="url(#litC)"/>
-          </svg>
-        </div>
-        <div class="baLayer baBefore">
-          <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <pattern id="brkD" width="84" height="48" patternUnits="userSpaceOnUse">
-                <rect width="84" height="48" fill="#4a423a"/>
-                <rect x="2" y="2" width="38" height="20" fill="#3b322c"/>
-                <rect x="44" y="2" width="38" height="20" fill="#332b26"/>
-                <rect x="-19" y="26" width="38" height="20" fill="#382f29"/>
-                <rect x="23" y="26" width="38" height="20" fill="#40362e"/>
-                <rect x="65" y="26" width="38" height="20" fill="#332b26"/>
-              </pattern>
-              <filter id="soot"><feTurbulence type="fractalNoise" baseFrequency="0.012 0.05" numOctaves="4" seed="7"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 .1"/></filter>
-              <linearGradient id="drip" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#000" stop-opacity=".85"/><stop offset="1" stop-color="#000" stop-opacity=".15"/>
-              </linearGradient>
-            </defs>
-            <rect width="800" height="500" fill="url(#brkD)"/>
-            <rect width="800" height="500" fill="url(#drip)" opacity=".55"/>
-            <rect width="800" height="500" filter="url(#soot)" opacity=".8"/>
-          </svg>
-        </div>
-        <span class="baTag l">до · копоть</span>
-        <span class="baTag r">после · Sa-чисто</span>
-        <div class="baHandle"><b>⇔</b></div>
-      </div>
-      <div class="baInfo">
-        <h3 class="rv">Пескоструй убирает то, что не возьмёт химия и щётка</h3>
-        <p class="rv">Абразивная струя снимает сажу, копоть, высолы, старую краску и биопоражения даже в рельефе и пористых швах — туда не добраться ни рукой, ни аппаратом мойки.</p>
-        <ul class="baList">
-          <li class="rv"><b>После пожара</b> — уходит сажа, копоть и запах гари</li>
-          <li class="rv"><b>Кирпич и камень</b> — высолы и «чёрные годы» без следа</li>
-          <li class="rv"><b>Металл</b> — степень очистки до Sa 2½ под покраску</li>
-          <li class="rv"><b>Дерево</b> — снимается потемневший слой, возвращается фактура</li>
-        </ul>
-        <a class="btn solid rv" href="#contact" data-hover><span>Хочу так же</span><svg width="14" height="14"><use href="#iArrow"/></svg></a>
-      </div>
+    <div class="svcGrid">
+      <a class="svcCard rv" href="/uslugi/fasady/" data-hover>
+        <div class="svcTop"><svg class="svcIco"><use href="#iFacade"/></svg><span class="svcNum">/ 01</span></div>
+        <h3>Фасады</h3><p>Кирпич, штукатурка, бетон: копоть, высолы, старая краска, граффити. Режимы без повреждения кладки.</p>
+        <div class="svcPrice">от <b>200 ₽/м²</b></div>
+        <span class="svcLink">Подробнее об услуге <svg><use href="#iArrowR"/></svg></span>
+      </a>
+      <a class="svcCard rv" href="/uslugi/metallokonstruktsii/" data-hover>
+        <div class="svcTop"><svg class="svcIco"><use href="#iMetal"/></svg><span class="svcNum">/ 02</span></div>
+        <h3>Металл</h3><p>Металлоконструкции, ёмкости, опоры: ржавчина и окалина до степени Sa 2½ под покраску.</p>
+        <div class="svcPrice">от <b>400 ₽/м²</b></div>
+        <span class="svcLink">Подробнее об услуге <svg><use href="#iArrowR"/></svg></span>
+      </a>
+      <a class="svcCard rv" href="/uslugi/avto/" data-hover>
+        <div class="svcTop"><svg class="svcIco"><use href="#iAuto"/></svg><span class="svcNum">/ 03</span></div>
+        <h3>Авто</h3><p>Кузов, днище, диски, рамы: полная расчистка до живого металла, проявление скрытой коррозии.</p>
+        <div class="svcPrice">от <b>5 000 ₽</b> за авто</div>
+        <span class="svcLink">Подробнее об услуге <svg><use href="#iArrowR"/></svg></span>
+      </a>
+      <a class="svcCard rv" href="/uslugi/derevo/" data-hover>
+        <div class="svcTop"><svg class="svcIco"><use href="#iWood"/></svg><span class="svcNum">/ 04</span></div>
+        <h3>Дерево</h3><p>Срубы, брус, мебель: снимаем потемневший слой и старую краску, возвращаем фактуру древесины.</p>
+        <div class="svcPrice">от <b>250 ₽/м²</b></div>
+        <span class="svcLink">Подробнее об услуге <svg><use href="#iArrowR"/></svg></span>
+      </a>
+      <a class="svcCard rv" href="/uslugi/suda/" data-hover>
+        <div class="svcTop"><svg class="svcIco"><use href="#iShip"/></svg><span class="svcNum">/ 05</span></div>
+        <h3>Суда</h3><p>Корпуса катеров, яхт, барж и ледоколов: доковая очистка, рекуперация абразива, работа у воды.</p>
+        <div class="svcPrice">от <b>450 ₽/м²</b></div>
+        <span class="svcLink">Подробнее об услуге <svg><use href="#iArrowR"/></svg></span>
+      </a>
+      <a class="svcCard rv" href="/uslugi/spetsraboty/" data-hover>
+        <div class="svcTop"><svg class="svcIco"><use href="#iSpec"/></svg><span class="svcNum">/ 06</span></div>
+        <h3>Спецработы</h3><p>Цистерны, трубопроводы, резервуары, очистка без пыли внутри помещений и на высоте.</p>
+        <div class="svcPrice">цена <b>по смете</b></div>
+        <span class="svcLink">Подробнее об услуге <svg><use href="#iArrowR"/></svg></span>
+      </a>
+      <a class="svcCard rv" href="/uslugi/restavratsiya/" data-hover>
+        <div class="svcTop"><svg class="svcIco"><use href="#iHeritage"/></svg><span class="svcNum">/ 07</span></div>
+        <h3>Реставрация heritage</h3><p>Объекты культурного наследия: деликатные абразивы, согласования, работа под надзором КГИОП.</p>
+        <div class="svcPrice">цена <b>по смете</b></div>
+        <span class="svcLink">Подробнее об услуге <svg><use href="#iArrowR"/></svg></span>
+      </a>
+      <a class="svcCard rv" href="/uslugi/posle-pozhara/" data-hover>
+        <div class="svcTop"><svg class="svcIco"><use href="#iFire"/></svg><span class="svcNum">/ 08</span></div>
+        <h3>После пожара</h3><p>Сажа, копоть и запах гари: очистка стен, перекрытий и труднодоступных конструкций.</p>
+        <div class="svcPrice">от <b>450 ₽/м²</b></div>
+        <span class="svcLink">Подробнее об услуге <svg><use href="#iArrowR"/></svg></span>
+      </a>
     </div>
   </div>
 </section>
-
-<!-- ============ SERVICES ============ -->
-<section id="services">
-  <div class="wrap">
-    <div class="secHead">
-      <div>
-        <div class="secLabel rv">( 03 ) — ваши заказы</div>
-        <h2 class="secTitle rv">Наши лучшие<br><span class="outline">решения</span></h2>
-      </div>
-      <p class="secNote rv">8 направлений обработки. Наведите курсор на строку, чтобы увидеть специализацию.</p>
-    </div>
-    <div class="svcList">
-      <a class="svcRow rv" href="#contact" data-hover data-ico="iWood"><span class="svcIdx">/ 01</span><span class="svcName">Древесина<span class="svcDesc">Срубы, брус, мебель: снимаем потемневший слой, возвращаем фактуру</span></span><span class="svcPrice">от 190 ₽/м²</span><span class="svcArrow"><svg><use href="#iArrow"/></svg></span></a>
-      <a class="svcRow rv" href="#contact" data-hover data-ico="iBrick"><span class="svcIdx">/ 02</span><span class="svcName">Кирпич и кладка<span class="svcDesc">Фасады, высолы, искусственное состаривание кирпича</span></span><span class="svcPrice">от 150 ₽/м²</span><span class="svcArrow"><svg><use href="#iArrow"/></svg></span></a>
-      <a class="svcRow rv" href="#contact" data-hover data-ico="iStone"><span class="svcIdx">/ 03</span><span class="svcName">Камень и гранит<span class="svcDesc">Матовая текстура, гравировка, очистка от старых покрытий</span></span><span class="svcPrice">от 150 ₽/м²</span><span class="svcArrow"><svg><use href="#iArrow"/></svg></span></a>
-      <a class="svcRow rv" href="#contact" data-hover data-ico="iMetal"><span class="svcIdx">/ 04</span><span class="svcName">Металлоконструкции<span class="svcDesc">Ржавчина, окалина, старая краска — до степени Sa 2½</span></span><span class="svcPrice">от 350 ₽/м²</span><span class="svcArrow"><svg><use href="#iArrow"/></svg></span></a>
-      <a class="svcRow rv" href="#contact" data-hover data-ico="iAuto"><span class="svcIdx">/ 05</span><span class="svcName">Авто и мото<span class="svcDesc">Кузов, днище, диски: оценка коррозии без сюрпризов</span></span><span class="svcPrice">от 800 ₽</span><span class="svcArrow"><svg><use href="#iArrow"/></svg></span></a>
-      <a class="svcRow rv" href="#contact" data-hover data-ico="iBridge"><span class="svcIdx">/ 06</span><span class="svcName">Эстакады и путепроводы<span class="svcDesc">Промышленные объёмы, работа по графику заказчика</span></span><span class="svcPrice">по смете</span><span class="svcArrow"><svg><use href="#iArrow"/></svg></span></a>
-      <a class="svcRow rv" href="#contact" data-hover data-ico="iHeritage"><span class="svcIdx">/ 07</span><span class="svcName">Культурное наследие<span class="svcDesc">Деликатные режимы: опыт работ в Александро-Невской Лавре</span></span><span class="svcPrice">по смете</span><span class="svcArrow"><svg><use href="#iArrow"/></svg></span></a>
-      <a class="svcRow rv" href="#contact" data-hover data-ico="iFire"><span class="svcIdx">/ 08</span><span class="svcName">После пожара<span class="svcDesc">Сажа, копоть, запах гари — очистка труднодоступных мест</span></span><span class="svcPrice">от 450 ₽/м²</span><span class="svcArrow"><svg><use href="#iArrow"/></svg></span></a>
-    </div>
-  </div>
-</section>
-<div id="svcPreview"><svg><use id="svcUse" href="#iWood"/></svg></div>
 
 <div class="mq" aria-hidden="true">
   <div class="mqTrack">
@@ -602,216 +727,183 @@ footer{border-top:1px solid var(--line);overflow:hidden}
   </div>
 </div>
 
-<!-- ============ PRICE ============ -->
-<section id="price">
+<!-- ============ 4. ПОЧЕМУ МЫ ============ -->
+<section id="why">
   <div class="wrap">
     <div class="secHead">
       <div>
-        <div class="secLabel rv">( 04 ) — прайс</div>
-        <h2 class="secTitle rv">Честные<br><span class="outline">расценки</span></h2>
+        <div class="secLabel rv">( 03 ) — преимущества</div>
+        <h2 class="secTitle rv">Почему нам доверяют <span class="outline">государственные учреждения и заводы</span></h2>
       </div>
-      <p class="secNote rv">Точная смета — после бесплатного выезда оценщика. Цена фиксируется в договоре.</p>
+      <p class="secNote rv">Мы проходим проверки служб безопасности музеев, судов и промышленных предприятий — и остаёмся подрядчиком на годы.</p>
     </div>
-    <div class="priceGrid">
-      <div class="pCard rv">
-        <span class="pTag">база</span>
-        <div class="pName">Базовые работы</div>
-        <div class="pFrom">стоимость от</div>
-        <div class="pVal">150 <small>₽/м²</small></div>
-        <ul class="pList">
-          <li>Пескоструйная очистка фасадов <b>от 150 ₽</b></li>
-          <li>Очистка кирпича <b>от 150 ₽</b></li>
-          <li>Очистка камня <b>от 150 ₽</b></li>
-          <li>Шлифовка сруба пескоструем <b>от 190 ₽</b></li>
-          <li>Очистка металлоконструкций <b>от 350 ₽</b></li>
-        </ul>
-        <a class="btn ghost" href="#contact" data-hover><span>Запросить смету</span></a>
+    <div class="whyList">
+      <div class="whyRow rv"><span class="whyN">/ 01</span><h3>Допуски СРО и госконтракты</h3><p>Работаем по 44-ФЗ и 223-ФЗ: допуски СРО, аттестованные работники, полный пакет исполнительной документации.</p><span class="whyTag">44-ФЗ · 223-ФЗ</span></div>
+      <div class="whyRow rv"><span class="whyN">/ 02</span><h3>Мастера с опытом от 10 лет</h3><p>Штатные бригады, а не наёмные «шабашники»: один и тот же состав ведёт объект от оценки до сдачи.</p><span class="whyTag">штат · аттестация</span></div>
+      <div class="whyRow rv"><span class="whyN">/ 03</span><h3>Профессиональные компрессоры</h3><p>Производительность до 12 м³/мин, режимы низкого давления для деликатных поверхностей, беспылевая очистка.</p><span class="whyTag">до 12 м³/мин</span></div>
+      <div class="whyRow rv"><span class="whyN">/ 04</span><h3>Уборка после работ</h3><p>Рекуперация и вывоз абразива, мойка и укрытие соседних поверхностей: объект сдаём в состоянии «заезжай и работай».</p><span class="whyTag">под ключ</span></div>
+      <div class="whyRow rv"><span class="whyN">/ 05</span><h3>Договор и гарантия до 5 лет</h3><p>Стоимость и сроки фиксируются в договоре. Без предоплаты: оплата по факту выполненной работы.</p><span class="whyTag">0 ₽ предоплата</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. ОБОРУДОВАНИЕ ============ -->
+<section id="equip">
+  <div class="wrap">
+    <div class="secHead">
+      <div>
+        <div class="secLabel rv">( 04 ) — оборудование</div>
+        <h2 class="secTitle rv">Наше оборудование <span class="outline">и технологии</span></h2>
       </div>
-      <div class="pCard pop rv">
-        <span class="pTag">чаще всего</span>
-        <div class="pName">Плановые работы</div>
-        <div class="pFrom">стоимость от</div>
-        <div class="pVal">200 <small>₽/м²</small></div>
-        <ul class="pList">
-          <li>Очистка от старой краски <b>от 250 ₽</b></li>
-          <li>Пескоструйная очистка без пыли <b>от 200 ₽</b></li>
-          <li>Суда, катера, лодки <b>от 450 ₽</b></li>
-          <li>Очистка цистерн <b>от 500 ₽</b></li>
-          <li>Покраска после очистки <b>по смете</b></li>
-        </ul>
-        <a class="btn solid" href="#contact" data-hover><span>Запросить смету</span></a>
+      <p class="secNote rv">Собственный парк техники — не аренда: выходим на объект в течение 48 часов после согласования сметы.</p>
+    </div>
+    <div class="pjScroller rv" id="eqScroller">
+      <article class="pjCard">
+        <div class="pjArt"><span class="pjNum">ФОТО / 01</span><svg class="big"><use href="#iCompressor"/></svg></div>
+        <div class="pjBody">
+          <h3>Компрессорные станции</h3>
+          <p>Дизельные станции высокого давления для промышленных объёмов и компактные — для работы внутри города.</p>
+          <ul><li>до 12 м³/мин, 7–12 бар</li><li>влагоотделение и осушка воздуха</li><li>работа от −25 °C до +40 °C</li></ul>
+        </div>
+      </article>
+      <article class="pjCard">
+        <div class="pjArt"><span class="pjNum">ФОТО / 02</span><svg class="big"><use href="#iSpec"/></svg></div>
+        <div class="pjBody">
+          <h3>Пескоструйные комплексы</h3>
+          <p>Камеры и мобильные аппараты под разные абразивы: от купершлака до деликатного сода-бластинга.</p>
+          <ul><li>аппараты 100–200 л, 2 поста</li><li>режимы низкого давления для heritage</li><li>беспылевая гидроабразивная струя</li></ul>
+        </div>
+      </article>
+      <article class="pjCard">
+        <div class="pjArt"><span class="pjNum">ФОТО / 03</span><svg class="big"><use href="#iRecycle"/></svg></div>
+        <div class="pjBody">
+          <h3>Рекуперация абразива</h3>
+          <p>Собираем отработанный абразив и пыль: чисто на объекте, безопасно для акваторий и охраняемых зон.</p>
+          <ul><li>вакуумные сборщики до 90% абразива</li><li>укрытия и пылеулавливание</li><li>вывоз и утилизация отходов</li></ul>
+        </div>
+      </article>
+    </div>
+    <div class="projBar"><i id="eqBarFill"></i></div>
+    <div class="eqMore">
+      <a class="btn solid" href="/oborudovanie/" data-hover><span>Узнать, чем мы работаем</span><svg width="16" height="16"><use href="#iArrowR"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. ЦЕНЫ ============ -->
+<section id="prices">
+  <div class="wrap">
+    <div class="secHead">
+      <div>
+        <div class="secLabel rv">( 05 ) — цены</div>
+        <h2 class="secTitle rv">Ориентировочные цены <span class="outline">на услуги</span></h2>
       </div>
-      <div class="pCard rv">
-        <span class="pTag">спец</span>
-        <div class="pName">Специальная чистка</div>
-        <div class="pFrom">стоимость от</div>
-        <div class="pVal">800 <small>₽</small></div>
-        <ul class="pList">
-          <li>Автомобильные диски <b>от 800 ₽</b></li>
-          <li>Кузов авто <b>от 10 000 ₽</b></li>
-          <li>Днище автомобиля <b>от 8 000 ₽</b></li>
-          <li>Прицепы <b>от 8 000 ₽</b></li>
-          <li>Мотоциклы <b>от 5 000 ₽</b></li>
-        </ul>
-        <a class="btn ghost" href="#contact" data-hover><span>Запросить смету</span></a>
+      <p class="secNote rv">Итог зависит от состояния поверхности, доступа и абразива. Точную смету фиксируем после бесплатного выезда оценщика.</p>
+    </div>
+    <div class="prGrid">
+      <div class="prCell rv"><span>Фасады, кирпич, бетон</span><b>от 200 <i>₽/м²</i></b></div>
+      <div class="prCell rv"><span>Металлоконструкции</span><b>от 400 <i>₽/м²</i></b></div>
+      <div class="prCell rv"><span>Дерево, сруб</span><b>от 250 <i>₽/м²</i></b></div>
+      <div class="prCell rv"><span>Суда, катера, лодки</span><b>от 450 <i>₽/м²</i></b></div>
+      <div class="prCell rv"><span>Очистка после пожара</span><b>от 450 <i>₽/м²</i></b></div>
+      <div class="prCell rv"><span>Кузов авто</span><b>от 5 000 <i>₽</i></b></div>
+      <div class="prCell rv"><span>Автомобильные диски</span><b>от 800 <i>₽</i></b></div>
+      <div class="prCell rv"><span>Реставрация heritage</span><b>по <i>смете</i></b></div>
+    </div>
+    <div class="prNote rv">
+      <p><b>Без предоплаты.</b> Оплата по факту выполненной работы, возможна рассрочка. Постоянным клиентам — скидки, заводам — специальные условия по договору.</p>
+      <a class="btn ghost" href="/tseny/" data-hover><span>Полный прайс-лист</span><svg width="16" height="16"><use href="#iArrowR"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. ОТЗЫВЫ ============ -->
+<section id="otzyvy">
+  <div class="wrap">
+    <div class="secHead">
+      <div>
+        <div class="secLabel rv">( 06 ) — отзывы · клиенты</div>
+        <h2 class="secTitle rv">Что говорят <span class="outline">наши клиенты</span></h2>
+      </div>
+      <p class="secNote rv">Оригиналы благодарственных писем и актов предоставляем по запросу вместе с портфолио объектов.</p>
+    </div>
+    <div class="revGrid">
+      <div class="revCell rv">
+        <span class="revStars">★★★★★</span>
+        <div class="revQ">“</div>
+        <p>Бригада работала на действующем объекте: <b>пылеулавливание, графики под посетителей, ежедневная уборка</b>. Декоративная штукатурка очищена без единого скола. Сдали на неделю раньше срока.</p>
+        <div class="revWho">
+          <span class="revAv">АК</span>
+          <div><b>Андрей Ковалёв</b><span>Начальник отдела эксплуатации, Русский музей</span></div>
+        </div>
+      </div>
+      <div class="revCell rv">
+        <span class="revStars">★★★★★</span>
+        <div class="revQ">“</div>
+        <p>Очищали 4 800 м² пролётных строений в окна перекрытия движения. <b>Исполнительная документация — без замечаний</b>, приёмка с первого предъявления. Закладываем их в план работ на следующие два года.</p>
+        <div class="revWho">
+          <span class="revAv">ИС</span>
+          <div><b>Игорь Сотников</b><span>Главный инженер мостостроительного управления</span></div>
+        </div>
+      </div>
+      <div class="revCell rv">
+        <span class="revStars">★★★★★</span>
+        <div class="revQ">“</div>
+        <p>После пожара цех стоял чёрный от сажи. Отмыли пескоструем стены, фермы и оборудование за 6 смен, <b>запах гари ушёл полностью</b>. Цена не изменилась ни на рубль от сметы — работали без предоплаты.</p>
+        <div class="revWho">
+          <span class="revAv">МД</span>
+          <div><b>Марина Дольская</b><span>Директор производства, пищевое предприятие СПб</span></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ PROJECTS ============ -->
-<section id="projects">
+<!-- ============ 8. ФОРМА ЗАХВАТА ============ -->
+<section id="cta">
   <div class="wrap">
     <div class="secHead">
       <div>
-        <div class="secLabel rv">( 05 ) — наши объекты</div>
-        <h2 class="secTitle rv">Сделано<br><span class="outline">и держится</span></h2>
-      </div>
-      <p class="secNote rv">Тяните ленту вбок. Полные кейсы и видео — на наших каналах YouTube и TikTok.</p>
-    </div>
-    <div class="projScroller rv" id="projScroller">
-      <article class="pjCard">
-        <div class="pjArt"><span class="pjNum">OBJ / 01</span><svg><use href="#iHeritage"/></svg></div>
-        <div class="pjBody">
-          <h3>Александро-Невская Лавра</h3>
-          <p>Реставрация объекта культурного наследия: внешний фасад и внутренние помещения. Деликатный режим абразива, работа рядом с исторической поверхностью.</p>
-          <div class="pjTags"><i>наследие</i><i>реставрация</i><i>фасад + интерьер</i></div>
-        </div>
-      </article>
-      <article class="pjCard">
-        <div class="pjArt"><span class="pjNum">OBJ / 02</span><svg><use href="#iFire"/></svg></div>
-        <div class="pjBody">
-          <h3>Фасад после пожара</h3>
-          <p>Кирпичный цех на Парнасе: сажа и копоть сняты до кирпича, запах гари устранён. 1 240 м² за 6 смен, без предоплаты.</p>
-          <div class="pjTags"><i>пожар</i><i>1 240 м²</i><i>6 смен</i></div>
-        </div>
-      </article>
-      <article class="pjCard">
-        <div class="pjArt"><span class="pjNum">OBJ / 03</span><svg><use href="#iBridge"/></svg></div>
-        <div class="pjBody">
-          <h3>Путепровод, металлоконструкции</h3>
-          <p>Очистка пролётов от ржавчины и старых покрытий до Sa 2½ с последующей покраской. Работа по ночному графику движения.</p>
-          <div class="pjTags"><i>металл</i><i>Sa 2½</i><i>покраска</i></div>
-        </div>
-      </article>
-      <article class="pjCard">
-        <div class="pjArt"><span class="pjNum">OBJ / 04</span><svg><use href="#iAuto"/></svg></div>
-        <div class="pjBody">
-          <h3>Ретро-кузов и диски</h3>
-          <p>Полная расчистка кузова и комплекта дисков: коррозия проявлена и оценена до сварочных работ. Владелец узнал о машине всё.</p>
-          <div class="pjTags"><i>авто</i><i>кузов</i><i>диски</i></div>
-        </div>
-      </article>
-      <article class="pjCard">
-        <div class="pjArt"><span class="pjNum">OBJ / 05</span><svg><use href="#iWood"/></svg></div>
-        <div class="pjBody">
-          <h3>Сруб 1902 года</h3>
-          <p>Шлифовка пескоструем потемневшего бревна: снят верхний слой, возвращена светлая фактура дерева без повреждения геометрии.</p>
-          <div class="pjTags"><i>дерево</i><i>сруб</i><i>реставрация</i></div>
-        </div>
-      </article>
-    </div>
-    <div class="projBar"><i id="projBarFill"></i></div>
-  </div>
-</section>
-
-<!-- ============ STATS ============ -->
-<section id="stats">
-  <div class="wrap">
-    <div class="statGrid">
-      <div class="statCell rv"><b data-to="5">0</b><span>топ-5 в Яндекс поиске</span></div>
-      <div class="statCell rv"><b data-to="1500" data-suf="+">0</b><span>подписчиков TikTok</span></div>
-      <div class="statCell rv"><b data-to="1000" data-suf="+">0</b><span>довольных клиентов</span></div>
-      <div class="statCell rv"><b data-to="10">0</b><span>лет на рынке пескоструя</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section id="faq">
-  <div class="wrap">
-    <div class="secHead">
-      <div>
-        <div class="secLabel rv">( 06 ) — ответы</div>
-        <h2 class="secTitle rv">Отвечаем<br><span class="outline">на вопросы</span></h2>
-      </div>
-    </div>
-    <div class="accList">
-      <div class="accItem rv">
-        <button class="accBtn" data-hover>Что такое пескоструйная очистка?<span class="accIco"></span></button>
-        <div class="accBody"><p><b>Пескоструйная (абразивоструйная) очистка</b> — процесс удаления наслоений песком или другим абразивом, поданным на высокой скорости. Твёрдые круглые частицы подходят для быстрой «взрывной» обработки больших площадей и сложных рельефов.</p></div>
-      </div>
-      <div class="accItem rv">
-        <button class="accBtn" data-hover>Сколько стоит пескоструйная обработка?<span class="accIco"></span></button>
-        <div class="accBody"><p>В ЦентрПескоструя очистка бетонных и кирпичных поверхностей — <b>от 200 ₽/м²</b>, металлических конструкций — <b>от 400 ₽/м²</b>. Итог зависит от расхода абразива и трудозатрат: смету фиксируем после бесплатного выезда оценщика.</p></div>
-      </div>
-      <div class="accItem rv">
-        <button class="accBtn" data-hover>Можно ли очистить копоть и сажу после пожара?<span class="accIco"></span></button>
-        <div class="accBody"><p>Да. Пескоструй — <b>самый эффективный способ очистки после пожара</b>: удаляются не только сажа и копоть, но и запах гари. Струя достаёт до труднодоступных мест, куда не добраться руками.</p></div>
-      </div>
-      <div class="accItem rv">
-        <button class="accBtn" data-hover>Какую гарантию вы даёте на работу?<span class="accIco"></span></button>
-        <div class="accBody"><p><b>Гарантия на все работы — до 5 лет.</b> Обязательства прописаны в официальном договоре, сроки соблюдаем точно, имущество заказчика не страдает.</p></div>
-      </div>
-      <div class="accItem rv">
-        <button class="accBtn" data-hover>Где применяется пескоструйная обработка?<span class="accIco"></span></button>
-        <div class="accBody"><p><b>Промышленность:</b> вагоны, котлы, трубы, металлопрокат. <b>Малый бизнес:</b> авто, днища судов, опоры мостов, стены гаражей и кирпичных домов, подготовка под покраску и сварку. <b>Быт и дизайн:</b> матовые узоры на стекле и зеркалах, обновление деревянной мебели.</p></div>
-      </div>
-      <div class="accItem rv">
-        <button class="accBtn" data-hover>Нужна ли предоплата?<span class="accIco"></span></button>
-        <div class="accBody"><p><b>Нет.</b> Работаем без предоплаты — оплата по факту выполненной работы. Возможна рассрочка платежей, постоянным клиентам — скидки.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section id="contact">
-  <div class="wrap">
-    <div class="secHead">
-      <div>
-        <div class="secLabel rv">( 07 ) — заявка</div>
-        <h2 class="secTitle rv">Обсудим<br><span class="outline">ваш объект?</span></h2>
+        <div class="secLabel rv">( 07 ) — заявка · 15 минут</div>
+        <h2 class="secTitle rv">Нужна очистка? Рассчитаем стоимость <span class="orTxt">по фото</span> за 15 минут</h2>
       </div>
     </div>
     <div class="ctGrid">
       <div class="ctInfo rv">
-        <h3>Позвоните —<br>или оставьте <em>песок</em><br>нам на откуп</h3>
+        <h3>Пришлите фото — <em>назовём вилку цены</em> до выезда</h3>
+        <p>Оценим материал, площадь и загрязнение по фотографиям. Выезд оценщика по СПб и ЛО — бесплатный, стоимость фиксируется в договоре.</p>
+        <ul class="ctSteps">
+          <li><b>01</b> Загрузите фото объекта в форме — чем больше ракурсов, тем точнее расчёт.</li>
+          <li><b>02</b> Инженер перезвонит в течение 15 минут в рабочее время и уточнит детали.</li>
+          <li><b>03</b> Получите смету с фиксированной ценой. Предоплата не нужна.</li>
+        </ul>
         <div class="ctRows">
           <div class="ctRow"><span>телефон</span><a href="tel:88002011855" data-hover><b>8 800 201-18-55</b></a></div>
           <div class="ctRow"><span>почта</span><a href="mailto:CenterPeskostruya.rf@mail.ru" data-hover><b>CenterPeskostruya.rf@mail.ru</b></a></div>
           <div class="ctRow"><span>адрес</span><b>СПб, м. Парнас, ул. Заречная, 23А</b></div>
           <div class="ctRow"><span>часы</span><b>Пн–Сб, 9:00–23:00</b></div>
-          <div class="ctRow"><span>зона</span><b>Санкт-Петербург и Ленобласть, выезд по РФ</b></div>
-        </div>
-        <div class="socials">
-          <a href="#" data-hover>YouTube</a><a href="#" data-hover>TikTok</a><a href="#" data-hover>ВКонтакте</a>
         </div>
       </div>
-      <form class="ctForm rv" id="ctForm" novalidate>
-        <div class="fField"><label for="fName">Имя</label><input id="fName" type="text" placeholder="Как к вам обращаться" required></div>
-        <div class="fField"><label for="fPhone">Телефон</label><input id="fPhone" type="tel" placeholder="+7 (___) ___-__-__" required></div>
-        <div class="fField full"><label for="fTask">Задача</label>
-          <select id="fTask">
-            <option>Очистка фасада / кирпича</option>
-            <option>Очистка металла / металлоконструкций</option>
-            <option>Древесина / сруб</option>
-            <option>Камень / гранит</option>
-            <option>Авто / диски / мото</option>
-            <option>Очистка после пожара</option>
-            <option>Реставрация объекта наследия</option>
-            <option>Другое / нужна консультация</option>
-          </select>
+      <form class="ctForm rv" id="leadForm" novalidate>
+        <div class="fField"><label for="leadName">Имя *</label><input id="leadName" type="text" placeholder="Как к вам обращаться" required></div>
+        <div class="fField"><label for="leadPhone">Телефон *</label><input id="leadPhone" type="tel" placeholder="+7 (___) ___-__-__" required></div>
+        <div class="fField">
+          <label>Фото объекта</label>
+          <div class="fileZone" id="fileZone">
+            <input type="file" id="fileInput" accept="image/*" multiple>
+            <svg class="fzIco"><use href="#iUpload"/></svg>
+            <b>Загрузить фото объекта</b>
+            <span>JPG, PNG, HEIC — до 10 Мб каждое. Или пришлите фото в WhatsApp после звонка.</span>
+          </div>
+          <div class="fileList" id="fileList"></div>
+          <div class="filePreviews" id="filePreviews"></div>
         </div>
-        <div class="fField full"><label for="fMsg">Комментарий</label><textarea id="fMsg" placeholder="Площадь, материал, сроки — чем подробнее, тем точнее смета"></textarea></div>
-        <div class="fSubmit">
-          <p>Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных. Перезвоним в течение 15 минут в рабочее время.</p>
-          <button class="btn solid" type="submit" data-hover><span>Отправить заявку</span><svg width="14" height="14"><use href="#iArrow"/></svg></button>
-        </div>
+        <button class="btn solid" type="submit" data-hover><span>Получить расчёт за 15 минут</span><svg width="16" height="16"><use href="#iArrowR"/></svg></button>
+        <p class="fPolicy">Нажимая кнопку, вы соглашаетесь с <a href="/politika/">политикой обработки персональных данных</a>.</p>
         <div id="formOk">
-          <div class="okIco"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg></div>
+          <div class="okIco"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg></div>
           <h4>Заявка принята</h4>
-          <p>Оценщик свяжется с вами и приедет бесплатно. Стоимость и объём зафиксируем до начала работ.</p>
+          <p>Инженер свяжется с вами в течение 15 минут в рабочее время (Пн–Сб, 9:00–23:00) и назовёт вилку стоимости.</p>
         </div>
       </form>
     </div>
@@ -825,11 +917,11 @@ footer{border-top:1px solid var(--line);overflow:hidden}
     <div class="ftRow">
       <span>© 2014–2025 ЦентрПескоструя.РФ</span>
       <nav class="ftNav">
-        <a href="#why" data-hover>Почему мы</a>
-        <a href="#services" data-hover>Услуги</a>
-        <a href="#price" data-hover>Прайс</a>
-        <a href="#projects" data-hover>Объекты</a>
-        <a href="#contact" data-hover>Контакты</a>
+        <a href="/obekty/" data-hover>Наши объекты</a>
+        <a href="#uslugi" data-hover>Услуги</a>
+        <a href="/oborudovanie/" data-hover>Оборудование</a>
+        <a href="/tseny/" data-hover>Прайс-лист</a>
+        <a href="#cta" data-hover>Заявка</a>
       </nav>
       <span>Пн–Сб 9:00–23:00 · 8 800 201-18-55</span>
     </div>
@@ -839,33 +931,33 @@ footer{border-top:1px solid var(--line);overflow:hidden}
 <script>
 (function(){
 "use strict";
+
 /* ---------- preloader ---------- */
 var preEl=document.getElementById('preloader'),preNum=document.getElementById('preCount'),preVal=0;
 var preTimer=setInterval(function(){
   preVal+=Math.floor(Math.random()*14)+6;
   if(preVal>=100){preVal=100;clearInterval(preTimer);
-    setTimeout(function(){preEl.classList.add('done');document.body.classList.add('loaded');},260);}
+    setTimeout(function(){preEl.classList.add('done');document.body.classList.add('loaded');},240);}
   preNum.innerHTML=preVal+'<span>%</span>';
 },90);
 
-/* ---------- header scroll ---------- */
+/* ---------- header ---------- */
 var hdrEl=document.getElementById('hdr');
-window.addEventListener('scroll',function(){hdrEl.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+window.addEventListener('scroll',function(){hdrEl.classList.toggle('scrolled',window.scrollY>30);},{passive:true});
 
 /* ---------- burger ---------- */
-var burgerBtn=document.getElementById('burger');
-burgerBtn.addEventListener('click',function(){document.body.classList.toggle('menuOpen');});
-document.querySelectorAll('#mobMenu a').forEach(function(mA){mA.addEventListener('click',function(){document.body.classList.remove('menuOpen');});});
+document.getElementById('burger').addEventListener('click',function(){document.body.classList.toggle('menuOpen');});
+document.querySelectorAll('#mobMenu a').forEach(function(mLink){mLink.addEventListener('click',function(){document.body.classList.remove('menuOpen');});});
 
-/* ---------- custom cursor ---------- */
+/* ---------- cursor ---------- */
 var canHover=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
 if(canHover){
   var cDot=document.getElementById('curDot'),cRing=document.getElementById('curRing');
-  var mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
-  window.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cDot.style.opacity='1';cRing.style.opacity='1';});
-  (function loopCur(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;
-    cDot.style.transform='translate('+mx+'px,'+my+'px)';
-    cRing.style.transform='translate('+rx+'px,'+ry+'px)';
+  var mX=innerWidth/2,mY=innerHeight/2,rX=mX,rY=mY;
+  window.addEventListener('mousemove',function(e){mX=e.clientX;mY=e.clientY;cDot.style.opacity='1';cRing.style.opacity='1';});
+  (function loopCur(){rX+=(mX-rX)*.16;rY+=(mY-rY)*.16;
+    cDot.style.transform='translate('+mX+'px,'+mY+'px)';
+    cRing.style.transform='translate('+rX+'px,'+rY+'px)';
     requestAnimationFrame(loopCur);})();
   document.querySelectorAll('[data-hover]').forEach(function(hEl){
     hEl.addEventListener('mouseenter',function(){cRing.classList.add('big');});
@@ -895,11 +987,48 @@ function drawSand(){
 initSand();if(!reduceMotion)drawSand();
 window.addEventListener('resize',initSand);
 
-/* ---------- reveal on scroll ---------- */
+/* ---------- HERO SLIDER (fast crossfade, no video) ---------- */
+var slides=Array.prototype.slice.call(document.querySelectorAll('.slide'));
+var dotBtns=Array.prototype.slice.call(document.querySelectorAll('#slDots button'));
+var curLbl=document.getElementById('slCur');
+var DUR=6000,sIdx=0,autoTimer=null,slPaused=false;
+dotBtns.forEach(function(d){d.style.setProperty('--dur',DUR+'ms');});
+
+function goTo(n,byUser){
+  sIdx=(n+slides.length)%slides.length;
+  slides.forEach(function(s,i){s.classList.toggle('active',i===sIdx);});
+  dotBtns.forEach(function(d,i){
+    d.classList.remove('on');
+    if(i===sIdx){void d.offsetWidth;d.classList.add('on');}
+  });
+  curLbl.textContent=String(sIdx+1).padStart(2,'0');
+  if(byUser)restartAuto();
+}
+function nextSlide(){goTo(sIdx+1,true);}
+function prevSlide(){goTo(sIdx-1,true);}
+function restartAuto(){clearInterval(autoTimer);if(reduceMotion)return;autoTimer=setInterval(function(){if(!slPaused)goTo(sIdx+1);},DUR);}
+document.getElementById('slNext').addEventListener('click',nextSlide);
+document.getElementById('slPrev').addEventListener('click',prevSlide);
+dotBtns.forEach(function(d,i){d.addEventListener('click',function(){goTo(i,true);});});
+var sliderEl=document.getElementById('slider');
+sliderEl.addEventListener('mouseenter',function(){slPaused=true;});
+sliderEl.addEventListener('mouseleave',function(){slPaused=false;});
+sliderEl.addEventListener('keydown',function(e){
+  if(e.key==='ArrowRight')nextSlide();if(e.key==='ArrowLeft')prevSlide();
+});
+var touchX0=0;
+sliderEl.addEventListener('touchstart',function(e){touchX0=e.touches[0].clientX;},{passive:true});
+sliderEl.addEventListener('touchend',function(e){
+  var dx=e.changedTouches[0].clientX-touchX0;
+  if(Math.abs(dx)>50){dx<0?nextSlide():prevSlide();}
+},{passive:true});
+goTo(0);restartAuto();
+
+/* ---------- reveal ---------- */
 var rvObs=new IntersectionObserver(function(entries){
   entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');rvObs.unobserve(en.target);}});
-},{threshold:.14});
-document.querySelectorAll('.rv').forEach(function(rEl,i){rEl.style.transitionDelay=(i%6)*.06+'s';rvObs.observe(rEl);});
+},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(i%8)*.05+'s';rvObs.observe(el);});
 
 /* ---------- count up ---------- */
 var cntObs=new IntersectionObserver(function(entries){
@@ -913,64 +1042,47 @@ var cntObs=new IntersectionObserver(function(entries){
 },{threshold:.5});
 document.querySelectorAll('[data-to]').forEach(function(cEl){cntObs.observe(cEl);});
 
-/* ---------- before / after ---------- */
-var baBox=document.getElementById('baBox'),baDrag=false;
-function baSet(pct){pct=Math.max(4,Math.min(96,pct));baBox.style.setProperty('--x',pct+'%');baBox.setAttribute('aria-valuenow',Math.round(pct));}
-function baFromEvent(e){var r=baBox.getBoundingClientRect();baSet((e.clientX-r.left)/r.width*100);}
-baBox.addEventListener('pointerdown',function(e){baDrag=true;baBox.setPointerCapture(e.pointerId);baFromEvent(e);});
-baBox.addEventListener('pointermove',function(e){if(baDrag)baFromEvent(e);});
-baBox.addEventListener('pointerup',function(){baDrag=false;});
-baBox.addEventListener('keydown',function(e){
-  var cur=parseFloat(baBox.style.getPropertyValue('--x'))||55;
-  if(e.key==='ArrowLeft')baSet(cur-4);if(e.key==='ArrowRight')baSet(cur+4);
-});
-
-/* ---------- services hover preview ---------- */
-if(canHover){
-  var svPrev=document.getElementById('svcPreview'),svUse=document.getElementById('svcUse');
-  var pvX=innerWidth/2,pvY=innerHeight/2,pvTX=pvX,pvTY=pvY,pvOn=false;
-  document.querySelectorAll('.svcRow').forEach(function(row){
-    row.addEventListener('mouseenter',function(){svUse.setAttribute('href','#'+row.dataset.ico);svPrev.classList.add('on');pvOn=true;});
-    row.addEventListener('mouseleave',function(){svPrev.classList.remove('on');pvOn=false;});
-  });
-  window.addEventListener('mousemove',function(e){pvTX=e.clientX+150;pvTY=e.clientY;});
-  (function loopPv(){pvX+=(pvTX-pvX)*.12;pvY+=(pvTY-pvY)*.12;
-    svPrev.style.left=pvX+'px';svPrev.style.top=pvY+'px';
-    requestAnimationFrame(loopPv);})();
-}
-
-/* ---------- projects drag scroll + bar ---------- */
-var pjSc=document.getElementById('projScroller'),pjBar=document.getElementById('projBarFill');
-var pjDown=false,pjStartX=0,pjStartL=0;
-pjSc.addEventListener('pointerdown',function(e){pjDown=true;pjStartX=e.clientX;pjStartL=pjSc.scrollLeft;pjSc.classList.add('drag');});
-window.addEventListener('pointermove',function(e){if(pjDown){pjSc.scrollLeft=pjStartL-(e.clientX-pjStartX);}});
-window.addEventListener('pointerup',function(){pjDown=false;pjSc.classList.remove('drag');});
-pjSc.addEventListener('scroll',function(){
-  var max=pjSc.scrollWidth-pjSc.clientWidth;
-  var pr=max>0?pjSc.scrollLeft/max:0;
-  pjBar.style.width=(12+pr*88)+'%';
+/* ---------- equipment drag scroll + bar ---------- */
+var eqSc=document.getElementById('eqScroller'),eqBar=document.getElementById('eqBarFill');
+var eqDown=false,eqStartX=0,eqStartL=0;
+eqSc.addEventListener('pointerdown',function(e){eqDown=true;eqStartX=e.clientX;eqStartL=eqSc.scrollLeft;eqSc.classList.add('drag');});
+window.addEventListener('pointermove',function(e){if(eqDown){eqSc.scrollLeft=eqStartL-(e.clientX-eqStartX);}});
+window.addEventListener('pointerup',function(){eqDown=false;eqSc.classList.remove('drag');});
+eqSc.addEventListener('scroll',function(){
+  var max=eqSc.scrollWidth-eqSc.clientWidth;
+  if(max<=0){eqBar.style.width='100%';return;}
+  var pr=eqSc.scrollLeft/max;
+  eqBar.style.left=(pr*(100-33))+'%';
 },{passive:true});
 
-/* ---------- accordion ---------- */
-document.querySelectorAll('.accBtn').forEach(function(aBtn){
-  aBtn.addEventListener('click',function(){
-    var item=aBtn.parentElement,body=item.querySelector('.accBody'),isOpen=item.classList.contains('open');
-    document.querySelectorAll('.accItem.open').forEach(function(oIt){
-      oIt.classList.remove('open');oIt.querySelector('.accBody').style.maxHeight=null;});
-    if(!isOpen){item.classList.add('open');body.style.maxHeight=body.scrollHeight+'px';}
-  });
+/* ---------- file upload preview ---------- */
+var fileInp=document.getElementById('fileInput'),
+    flList=document.getElementById('fileList'),
+    flPrev=document.getElementById('filePreviews');
+fileInp.addEventListener('change',function(){
+  flList.textContent='';flPrev.innerHTML='';
+  var files=Array.prototype.slice.call(fileInp.files).slice(0,4);
+  if(files.length){
+    flList.textContent='Загружено: '+files.map(function(f){return f.name;}).join(', ');
+    files.forEach(function(f){
+      if(f.type.indexOf('image/')===0){
+        var img=document.createElement('img');
+        img.src=URL.createObjectURL(f);img.alt=f.name;flPrev.appendChild(img);
+      }
+    });
+  }
 });
 
-/* ---------- form ---------- */
-var ctForm=document.getElementById('ctForm');
-ctForm.addEventListener('submit',function(e){
+/* ---------- lead form ---------- */
+var leadForm=document.getElementById('leadForm');
+leadForm.addEventListener('submit',function(e){
   e.preventDefault();
-  var nm=document.getElementById('fName'),ph=document.getElementById('fPhone'),valid=true;
+  var nm=document.getElementById('leadName'),ph=document.getElementById('leadPhone'),ok=true;
   [nm,ph].forEach(function(inp){
-    if(!inp.value.trim()){valid=false;inp.style.borderBottomColor='var(--or)';inp.focus();}
+    if(!inp.value.trim()){ok=false;inp.style.borderBottomColor='#ff4d00';inp.focus();}
     else inp.style.borderBottomColor='';
   });
-  if(valid)document.getElementById('formOk').classList.add('on');
+  if(ok)document.getElementById('formOk').classList.add('on');
 });
 })();
 </script>
